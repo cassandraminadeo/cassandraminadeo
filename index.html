@@ -1,9 +1,225 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eee; /* Change background color to light gray */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #fff; /* Change background color to white */
+            padding: 10px;
+            text-align: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px; /* Increase padding for larger size */
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 18px; /* Increase font size for prominence */
+            border-radius: 5px; /* Add rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .main-nav a:hover {
+            background-color: #ddd; /* Change background color on hover */
+        }
+
+        .homework-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 12px; /* Set font size for homework links */
+        }
+
+        main {
+            background-color: #eee; /* Change background color to light gray */
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .white-box {
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            color: whitesmoke;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 100px; /* Adjust margin-top for space */
+        }
+
+        /* Contact page styles */
+        .contact-section {
+            background-color: #fff; /* Change background color to white */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* About Me section styles */
+        .about-me-section {
+            background-color: #fff; /* Change background color to white */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: flex; /* Add flex display for image and content alignment */
+        }
+
+        .about-me-section img {
+            max-width: 200px; /* Adjust width of the image */
+            margin-right: 20px; /* Add margin to separate image from text */
+        }
+
+        .about-me-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .about-me-content {
+            max-width: 600px;
+            text-align: justify;
+        }
+    </style>
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <div class="image-container">
+        <img src="images/IMG_0943.jpeg" alt="About Me Image Placeholder">
+        <div class="image-overlay">
+            <div class="white-box">
+                <p>Cassandra Minadeo</p>
+                <p2>Computer Science ~ Mathematics ~ English</p2>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <nav class="homework-links">
+        <a href="#homework1">Homework One</a>
+        <a href="#homework2">Homework Two</a>
+        <a href="#homework3">Homework Three</a>
+        <a href="#homework4">Homework Four</a>
+        <a href="#homework5">Homework Five</a>
+        <a href="#homework6">Homework Six</a>
+        <a href="#homework7">Homework Seven</a>
+    </nav>
+
+    <main>
+        <h2>Home</h2>
+        <div class="about-me-section">
+            <img src="about-me-image.jpg" alt="About Me Image Placeholder">
+            <div class="about-me-content">
+                <h2>About Me</h2>
+                <p>This is a basic HTML template. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tellus vel dolor tincidunt venenatis. Ut nec aliquam lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Duis eu augue vel tortor auctor sagittis. Aenean a dui vel purus blandit rhoncus eu ac nulla. Integer eget fermentum odio. Mauris vel quam in orci finibus cursus. Etiam auctor eros
+
+ sed libero interdum, ut suscipit odio fermentum.</p>
+                <p>Quisque eu libero vel odio euismod dictum. Phasellus euismod lacus nec cursus facilisis. Vivamus sagittis ultrices arcu, vel tincidunt quam volutpat eu. Fusce et eleifend velit, ac varius turpis. Vivamus efficitur convallis mi, vel congue libero tincidunt a. In hac habitasse platea dictumst. Nunc pharetra, augue ut tristique laoreet, felis ex fermentum odio, sit amet bibendum turpis dolor a nisl.</p>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Contact page section -->
+    <div class="contact-section">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
+
