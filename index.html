@@ -170,6 +170,16 @@
             border-radius: 5px;
             display: flex; /* Add flex display for image and content alignment */
         }
+
+    /*image sizing */
+     
+        #image1 {
+            max-width: 50%; /* Adjust the percentage based on your preference */
+            height: auto;
+        }
+
+
+
     </style>
 
 
@@ -177,7 +187,7 @@
 <body>
 
     <div class="image-container">
-        <img src="images/image1.png" alt="About Me Image Placeholder">
+        <img id="image1" src="images/image1.png" alt="About Me Image Placeholder">
         <div class="image-overlay">
             <div class="white-box">
                 <p>Cassandra Minadeo</p>
