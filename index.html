@@ -42,6 +42,11 @@
             background-color: #ddd; /* Change background color on hover */
         }
 
+        .homework-links {
+    white-space: nowrap; /* Prevent wrapping to the next line */
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+}
+
         .homework-links a {
             text-decoration: none;
             color: #333;
@@ -49,6 +54,7 @@
             margin: 0 10px;
             font-weight: bold;
             font-size: 12px; /* Set font size for homework links */
+            display: inline-block;
         }
 
         main {
@@ -86,11 +92,14 @@
             background-color: transparent;
             border: 2px solid #fff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 40px;
             text-align: center;
-            color: whitesmoke;
+            justify-items: space-around;
+            color: black;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-top: 100px; /* Adjust margin-top for space */
+            margin-top: 10px; /* Adjust margin-top for space */
+            width: 80%;
+            
         }
 
         /* Contact page styles */
@@ -153,12 +162,22 @@
             max-width: 600px;
             text-align: justify;
         }
+
+        .home-section {
+            background-color: #fff; /* Change background color to white */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: flex; /* Add flex display for image and content alignment */
+        }
     </style>
+
+
 </head>
 <body>
 
     <div class="image-container">
-        <img src="images/IMG_0943.jpeg" alt="About Me Image Placeholder">
+        <img src="images/image1.png" alt="About Me Image Placeholder">
         <div class="image-overlay">
             <div class="white-box">
                 <p>Cassandra Minadeo</p>
@@ -168,25 +187,25 @@
     </div>
 
     <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
+        <a href="#home-section">Home</a>
+        <a href="#about-me-section">About Me</a>
+        <a href="#contact-section">Contact Me</a>
     </nav>
 
     <nav class="homework-links">
-        <a href="#homework1">Homework One</a>
-        <a href="#homework2">Homework Two</a>
-        <a href="#homework3">Homework Three</a>
-        <a href="#homework4">Homework Four</a>
-        <a href="#homework5">Homework Five</a>
-        <a href="#homework6">Homework Six</a>
-        <a href="#homework7">Homework Seven</a>
+        <a href="homework1.html">Homework One</a>
+        <a href="homework2.html">Homework Two</a>
+        <a href="homework3.html">Homework Three</a>
+        <a href="homework4.html">Homework Four</a>
+        <a href="homework5.html">Homework Five</a>
+        <a href="homework6.html">Homework Six</a>
+        <a href="homework7.html">Homework Seven</a>
     </nav>
 
-    <main>
+    <main id="home-section">
         <h2>Home</h2>
-        <div class="about-me-section">
-            <img src="about-me-image.jpg" alt="About Me Image Placeholder">
+        <div class="about-me-section" id="about-me-section">
+            <img src="images/image2.png" alt="About Me Image Placeholder">
             <div class="about-me-content">
                 <h2>About Me</h2>
                 <p>This is a basic HTML template. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tellus vel dolor tincidunt venenatis. Ut nec aliquam lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Duis eu augue vel tortor auctor sagittis. Aenean a dui vel purus blandit rhoncus eu ac nulla. Integer eget fermentum odio. Mauris vel quam in orci finibus cursus. Etiam auctor eros
@@ -200,7 +219,7 @@
 
 
     <!-- Contact page section -->
-    <div class="contact-section">
+    <div class="contact-section" id="contact-section">
         <h2>Contact Me</h2>
         <form>
             <label for="name">Name:</label>
@@ -216,10 +235,55 @@
         </form>
     </div>
 
+
+<!--Footer Section-->    
     <footer>
         <p>&copy; 2024 Your Website. All rights reserved.</p>
     </footer>
 
+
+ <!-- Scrolling Section-->   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var contactLink = document.querySelector('a[href="#contact-section"]');
+            contactLink.addEventListener("click", scrollToContact);
+        });
+    
+        function scrollToContact(event) {
+            event.preventDefault();
+            var contactSection = document.getElementById("contact-section");
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var aboutMeLink = document.querySelector('a[href="#about-me-section"]');
+        aboutMeLink.addEventListener("click", scrollToAboutMe);
+    });
+
+    function scrollToAboutMe(event) {
+        event.preventDefault();
+        var aboutMeSection = document.getElementById("about-me-section");
+        aboutMeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var homeLink = document.querySelector('a[href="#home-section"]');
+        homeLink.addEventListener("click", scrollToHome);
+    });
+
+    function scrollToHome(event) {
+        event.preventDefault();
+        var homeSection = document.getElementById("home-section");
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>
+
+
 
