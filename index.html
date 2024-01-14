@@ -10,19 +10,41 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            /* background-color: #f4f4f4; */
+            
         }
+
+        
 
         header {
             background-color: #333;
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 10vh;
+            z-index: 1;
+            
         }
+
+        @keyframes animate {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
 
         header h1 {
             margin: 0;
             font-size: 36px;
+
         }
 
         nav {
@@ -187,6 +209,53 @@
     object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
 
+/* Cool Button Stuff */
+
+.btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative; 
+}
+.btn-two span {
+  z-index: 2; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+.btn-two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
     </style>
 </head>
 
@@ -194,24 +263,16 @@
 
     <header>
         <h1>Cassandra Minadeo</h1>
-        <h2> Computer Science ~ Mathematics ~ English</h2>
+        <h2> Computer Science - Mathematics - English</h2>
     </header>
 
     <nav class="main-nav">
+
+        
         <a href="#home-section">Home</a>
         <a href="#about-me-section">About Me</a>
         <a href="#contact-section">Contact Me</a>
     </nav>
-
-    <!-- <div class="image-container">
-        <img id="image1" src="images/image1.png" alt="Cassandra Minadeo">
-        <div class="image-overlay">
-            <div class="white-box">
-                <p>Cassandra Minadeo</p>
-                <p>Computer Science ~ Mathematics ~ English</p>
-            </div>
-        </div>
-    </div> -->
 
     <nav class="homework-links">
         <a href="homework1.html">Homework One</a>
