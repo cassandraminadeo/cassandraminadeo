@@ -55,18 +55,27 @@
 
         .main-nav a {
             text-decoration: none;
-            color: #333;
+            color: white;
             padding: 15px;
             margin: 0 10px;
             font-weight: bold;
             font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
+            border: 1px solid #333;
+            background-color: #333;
+            display: inline-block;
+            width: 35%;
         }
 
         .main-nav a:hover {
-            background-color: #ddd;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);;
+            color: #fff;
+            background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 2.5vh;
+            z-index: 1;
         }
 
         .homework-links {
@@ -76,7 +85,7 @@
 
         .homework-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             padding: 8px 15px;
             margin: 0 10px;
             font-weight: bold;
@@ -85,12 +94,16 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
             border: 1px solid #333;
-            background-color: transparent;
+            background-color: #333;
         }
 
         .homework-links a:hover {
-            background-color: #333;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);;
             color: #fff;
+            background-size: 400% 10%;
+	        animation: animate 5s ease infinite;
+	        height: 1.75vh;
+            z-index: 1;
         }
 
         main {
@@ -260,6 +273,9 @@
   background-color: rgba(255,255,255,0);
 }
 
+/* Back Button */
+
+
     </style>
 </head>
 
@@ -273,7 +289,7 @@
     <nav class="main-nav">
 
         
-        <a href="index.html">Take Me Back</a>
+        <a href="index.html">Home Page</a>
     </nav>
 
     <nav class="homework-links">
@@ -305,7 +321,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
+        <p>&copy; 2024 CassandraMinadeo. All rights reserved.</p>
 
              <!-- Social Media Links -->
              <div class="social-media">
