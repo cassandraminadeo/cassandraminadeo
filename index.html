@@ -55,18 +55,27 @@
 
         .main-nav a {
             text-decoration: none;
-            color: #333;
+            color: white;
             padding: 15px;
             margin: 0 10px;
             font-weight: bold;
             font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
+            
+            background-color: #333;
+            display: inline-block;
+            width: 25%;
         }
 
         .main-nav a:hover {
-            background-color: #ddd;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);;
+            color: #fff;
+            background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 2.5vh;
+            z-index: 1;
         }
 
         .homework-links {
@@ -84,7 +93,7 @@
             border-radius: 15px;
             transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
-            border: 1px solid #333;
+            
             background-color: #333;
         }
 
