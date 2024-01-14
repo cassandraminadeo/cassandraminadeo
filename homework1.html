@@ -1,12 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 1</title>
+    <title>Cassandra Minadeo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f4f4f4; */
+            
+        }
+
+        
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 10vh;
+            z-index: 1;
+            
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .main-nav a:hover {
+            background-color: #ddd;
+        }
+
+        .homework-links {
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .homework-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            border: 1px solid #333;
+            background-color: transparent;
+        }
+
+        .homework-links a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        main {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        #image1 {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-section,
+        .about-me-section,
+        .home-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .image-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    padding-top: 100%; /* Maintain a square aspect ratio (1:1) */
+    background-color: #ddd; /* Gray background color */
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+/* Cool Button Stuff */
+
+.btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative; 
+}
+.btn-two span {
+  z-index: 2; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+.btn-two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+    </style>
 </head>
+
 <body>
-    <h2>Homework 1</h2>
-    <!-- Content for Homework 1 -->
+
+    <header>
+        <h1>Cassandra Minadeo</h1>
+        <h2> Computer Science - Mathematics - English</h2>
+    </header>
+
+    <nav class="main-nav">
+
+        
+        <a href="index.html">Take Me Back</a>
+    </nav>
+
+    <nav class="homework-links">
+        <a href="homework1.html">Homework One</a>
+        <a href="homework2.html">Homework Two</a>
+        <a href="homework3.html">Homework Three</a>
+        <a href="homework4.html">Homework Four</a>
+        <a href="homework5.html">Homework Five</a>
+        <a href="homework6.html">Homework Six</a>
+        <a href="homework7.html">Homework Seven</a>
+    </nav>
+
+    <main id="home-section">
+        <h1>Homework One</h1>
+        <h2> Prompt </h2>
+        <p> Review the digital text version of Chaucer’s Troilus and Criseyde located at this URL:
+            http://www.librarius.com/troicris.htm In your first post, describe what makes this text unique
+            from a traditional text. What considerations is it making for the audience? For learning online?
+            How is the story organized to both construct a narrative and use the multimodal capabilities of
+            the web? How did this hypertext’s design help you learn about Chaucer (e.g., what did you
+            learn?) -OR- How did its design hinder your ability to read or enjoy the text? Try to find another
+            example of a digital text version of a piece of literature (contemporary or classical) and
+            compare its design to this version of Chaucer’s Troilus and Criseyde. In what ways does this
+            other text’s design improve upon (or hinder) reader interaction and learning?</p>
+        <h2> Response </h2>
+        <p> Assignment is being pondered. </p>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+
+             <!-- Social Media Links -->
+    <div class="social-media">
+        <a href="images/goodreads.png" target="_blank" class="social-link">Goodreads</a>
+        <a href="images/instagram.png" target="_blank" class="social-link">Instagram</a>
+        <a href="images/linkedin.png" target="_blank" class="social-link">LinkedIn</a>
+    </div>
+    </footer>
+
+    <!-- Scrolling Section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var contactLink = document.querySelector('a[href="#contact-section"]');
+            contactLink.addEventListener("click", scrollToContact);
+        });
+
+        function scrollToContact(event) {
+            event.preventDefault();
+            var contactSection = document.getElementById("contact-section");
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var aboutMeLink = document.querySelector('a[href="#about-me-section"]');
+            aboutMeLink.addEventListener("click", scrollToAboutMe);
+        });
+
+        function scrollToAboutMe(event) {
+            event.preventDefault();
+            var aboutMeSection = document.getElementById("about-me-section");
+            aboutMeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeLink = document.querySelector('a[href="#home-section"]');
+            homeLink.addEventListener("click", scrollToHome);
+        });
+
+        function scrollToHome(event) {
+            event.preventDefault();
+            var homeSection = document.getElementById("home-section");
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+<script>
+    var carousel = document.querySelector('.carousel-inner');
+    var items = document.querySelectorAll('.carousel-item');
+    var currentIndex = 0;
+    var totalItems = items.length;
+
+    function showNextSlide() {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    function showPrevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1;
+        }
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        var newTransformValue = -currentIndex * (100 / totalItems) + '%';
+        carousel.style.transform = 'translateX(' + newTransformValue + ')';
+    }
+
+    // Change slide every 3 seconds (adjust as needed)
+    setInterval(showNextSlide, 3000);
+
+    // Add event listeners for arrow clicks
+    document.querySelector('.prev').addEventListener('click', showPrevSlide);
+    document.querySelector('.next').addEventListener('click', showNextSlide);
+</script>
+
+
+
 </body>
+
 </html>
