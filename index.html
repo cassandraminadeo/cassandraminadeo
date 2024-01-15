@@ -349,7 +349,7 @@
     <!-- Contact page section -->
     <div class="contact-section" id="contact-section">
         <h2>Contact Me</h2>
-        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz2lxohYEui5Hvt2f981ysahaNt1AiUInNihAoYkANb-dpZ08RnJcN1Uz6az1F4iNKSWQ/exec" onsubmit="submitForm(); return false;">
+        <form id="contactForm" action="https://script.google.com/macros/s/AKfycbz2lxohYEui5Hvt2f981ysahaNt1AiUInNihAoYkANb-dpZ08RnJcN1Uz6az1F4iNKSWQ/exec">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -434,15 +434,32 @@
         var xhr = new XMLHttpRequest();
         xhr.open('POST', scriptUrl);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(formData));
 
-        // Optionally, you can handle the response here
         xhr.onload = function() {
-            console.log(xhr.responseText);
-            // You can update the UI or show a confirmation message
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                // You can update the UI or show a confirmation message
+                alert('Form submitted successfully!');
+            } else {
+                console.error('Error:', xhr.statusText);
+                // Show an error popup
+                alert('Sorry, this is not working right now. Please try again later.');
+            }
         };
+
+        xhr.onerror = function() {
+            console.error('Request failed');
+            // Show an error popup
+            alert('Sorry, there was an error submitting the form. Please try again later.');
+        };
+
+        xhr.send(JSON.stringify(formData));
+        
+        // Prevent the default form submission
+        return false;
     }
 </script>
+
 
 
 
