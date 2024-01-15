@@ -1,12 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 1</title>
+    <title>Cassandra Minadeo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f4f4f4; */
+            
+        }
+
+        
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);
+	        background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 10vh;
+            z-index: 1;
+            
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+}
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            
+            background-color: #333;
+            display: inline-block;
+            width: 35%;
+        }
+
+        .main-nav a:hover {
+            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);;
+            color: #fff;
+            background-size: 400% 10%;
+	        animation: animate 8s ease infinite;
+	        height: 2.5vh;
+            z-index: 1;
+        }
+
+        .homework-links {
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .homework-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            border: 1px solid #333;
+            background-color: #333;
+        }
+
+        .homework-links a:hover {
+            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);;
+            color: #fff;
+            background-size: 400% 10%;
+	        animation: animate 5s ease infinite;
+	        height: 1.75vh;
+            z-index: 1;
+        }
+
+        main {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Add margin from the content above */
+}
+
+.social-link {
+    text-decoration: none;
+    color: #333;
+    padding: 5px; /* Adjust padding as needed */
+    margin: 0 5px; /* Add margin between links */
+}
+
+.social-link img {
+    width: 20px; /* Adjust the width of the social media icons */
+    height: 20px; /* Adjust the height of the social media icons */
+}
+
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        #image1 {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-section,
+        .about-me-section,
+        .home-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .image-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    padding-top: 100%; /* Maintain a square aspect ratio (1:1) */
+    background-color: #ddd; /* Gray background color */
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+/* Cool Button Stuff */
+
+.btn-two {
+  color: #FFF;
+  transition: all 0.5s;
+  position: relative; 
+}
+.btn-two span {
+  z-index: 2; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+.btn-two::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+.btn-two:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+.btn-two:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+/* Back Button */
+
+
+    </style>
 </head>
+
 <body>
-    <h2>Homework 4</h2>
-    <!-- Content for Homework 1 -->
+
+    <header>
+        <h1>Cassandra Minadeo</h1>
+        <h2> Computer Science - Mathematics - English</h2>
+    </header>
+
+    <nav class="main-nav">
+
+        
+        <a href="index.html">Home Page</a>
+    </nav>
+
+    <nav class="homework-links">
+        <a href="homework1.html">Homework One</a>
+        <a href="homework2.html">Homework Two</a>
+        <a href="homework3.html">Homework Three</a>
+        <a href="homework4.html">Homework Four</a>
+        <a href="homework5.html">Homework Five</a>
+        <a href="homework6.html">Homework Six</a>
+        <a href="homework7.html">Homework Seven</a>
+    </nav>
+
+    <main id="home-section">
+        <h1>Homework Four</h1>
+        <h2> Prompt </h2>
+        <p> Discuss your views on the use of AI-assisted writing tools like ChatGPT, Google Bard, Bing AI,
+            ZenoChat, etc. You should consider the benefits, challenges, ethical considerations, and the role
+            of human creativity in the writing process. Connect with a chat bot of your choice (we used
+            https://chat.openai.com/ in class) and ask it what it thinks the benefits and drawbacks of its use
+            are. Try to challenge it on at least one of those ideas and see how it responds. In your prompt,
+            reflect on your argument with the bot and consider how “human” the bot seemed to be and
+            why this is important (or unimportant) to human-computer interaction. Experiment with the
+            conversation to see if you can get it to seem more human to you and discuss what kinds of
+            prompts you tried using and to what effect.
+            </p>
+        <h2> Response </h2>
+        <p> Assignment is being pondered. </p>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 CassandraMinadeo. All rights reserved.</p>
+
+             <!-- Social Media Links -->
+             <div class="social-media">
+                <a href="https://www.goodreads.com/user/show/139882967-cassie-minadeo" target="_blank" class="social-link">
+                    <img src="images/goodreads.png" alt="Goodreads">
+                </a>
+                <a href="https://www.instagram.com/cassie_minadeo/?next=%2F" target="_blank" class="social-link">
+                    <img src="images/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/cassie-minadeo-326513203/" target="_blank" class="social-link">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+    </footer>
+
+    <!-- Scrolling Section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var contactLink = document.querySelector('a[href="#contact-section"]');
+            contactLink.addEventListener("click", scrollToContact);
+        });
+
+        function scrollToContact(event) {
+            event.preventDefault();
+            var contactSection = document.getElementById("contact-section");
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var aboutMeLink = document.querySelector('a[href="#about-me-section"]');
+            aboutMeLink.addEventListener("click", scrollToAboutMe);
+        });
+
+        function scrollToAboutMe(event) {
+            event.preventDefault();
+            var aboutMeSection = document.getElementById("about-me-section");
+            aboutMeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeLink = document.querySelector('a[href="#home-section"]');
+            homeLink.addEventListener("click", scrollToHome);
+        });
+
+        function scrollToHome(event) {
+            event.preventDefault();
+            var homeSection = document.getElementById("home-section");
+            homeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+<script>
+    var carousel = document.querySelector('.carousel-inner');
+    var items = document.querySelectorAll('.carousel-item');
+    var currentIndex = 0;
+    var totalItems = items.length;
+
+    function showNextSlide() {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    function showPrevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1;
+        }
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        var newTransformValue = -currentIndex * (100 / totalItems) + '%';
+        carousel.style.transform = 'translateX(' + newTransformValue + ')';
+    }
+
+    // Change slide every 3 seconds (adjust as needed)
+    setInterval(showNextSlide, 3000);
+
+    // Add event listeners for arrow clicks
+    document.querySelector('.prev').addEventListener('click', showPrevSlide);
+    document.querySelector('.next').addEventListener('click', showNextSlide);
+</script>
+
+
+
 </body>
+
 </html>
