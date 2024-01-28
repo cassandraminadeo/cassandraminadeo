@@ -273,15 +273,6 @@
   background-color: rgba(255,255,255,0);
 }
 
-#video {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    border: 5px solid black; /* Adding a 5px solid black border */
-    border-radius: 10px; /* Adjust the border-radius as needed */
-}
-
 .bottom-images {
     margin-top: 20px;
     display: flex;
@@ -300,6 +291,99 @@
 }
 
 
+.examplelinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px; 
+}
+
+a[href="URL_for_Link_A"] {
+        color: #18272F;
+        position: relative;
+        text-decoration: none;
+        
+    }
+
+    a[href="URL_for_Link_A"]::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #18272F;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+
+    a[href="URL_for_Link_A"]:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    a[href="URL_for_Link_B"] {
+        background-image: linear-gradient(
+            to right,
+            #54b3d6,
+            #54b3d6 50%,
+            #000 50%
+        );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+        
+    }
+
+    a[href="URL_for_Link_B"]::before {
+        content: '';
+        background: #54b3d6;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a[href="URL_for_Link_B"]:hover {
+        background-position: 0;
+    }
+
+    a[href="URL_for_Link_B"]:hover::before {
+        width: 100%;
+    }
+
+    a[href="URL_for_Link_C"] {
+  background: linear-gradient(0deg, rgb(88, 140, 160), rgb(158, 175, 234)) no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  --bg-h: 100%;
+  color: black;
+  
+  
+}
+
+a[href="URL_for_Link_C"]:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+#video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid black; /* Adding a 5px solid black border */
+    border-radius: 10px; /* Adjust the border-radius as needed */
+}
 
 
 
@@ -363,13 +447,17 @@
 		adding a hover feature into the CSS code when developing the website. This allows the text to be consistent until the user hovers over an unknown word that then it will show as a hyperlink to click on. 	
 	</p>
 
+    <div class="examplelinks">
+        <a href="URL_for_Link_A">Hover this link</a>
+        <a href="URL_for_Link_B">Hover This Link</a>
+        <a href="URL_for_Link_C" data-replace="Hover this link"><span>Hover this link</span></a>
+    </div>
+    
+    <p> On a mobile device and can't hover right now? Check out this video:</p>
     <video id="video" autoplay loop muted playsinline>
         <source src="images/linkexample.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    
-    
-    
 
 		<p>Kindle is a prime example of seamless reading that has many features including, highlighting, embedded glossary, links to other sections of the text, dark and light mode, and even 
 		allows the user to change the font and size of the text. This is a 
@@ -455,43 +543,6 @@
             homeSection.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-
-<script>
-    var carousel = document.querySelector('.carousel-inner');
-    var items = document.querySelectorAll('.carousel-item');
-    var currentIndex = 0;
-    var totalItems = items.length;
-
-    function showNextSlide() {
-        if (currentIndex < totalItems - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateCarousel();
-    }
-
-    function showPrevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalItems - 1;
-        }
-        updateCarousel();
-    }
-
-    function updateCarousel() {
-        var newTransformValue = -currentIndex * (100 / totalItems) + '%';
-        carousel.style.transform = 'translateX(' + newTransformValue + ')';
-    }
-
-    // Change slide every 3 seconds (adjust as needed)
-    setInterval(showNextSlide, 3000);
-
-    // Add event listeners for arrow clicks
-    document.querySelector('.prev').addEventListener('click', showPrevSlide);
-    document.querySelector('.next').addEventListener('click', showNextSlide);
-</script>
 
 
 
