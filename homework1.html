@@ -273,7 +273,34 @@
   background-color: rgba(255,255,255,0);
 }
 
-/* Back Button */
+#video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid black; /* Adding a 5px solid black border */
+    border-radius: 10px; /* Adjust the border-radius as needed */
+}
+
+.bottom-images {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bottom-images a {
+    text-decoration: none;
+}
+
+.bottom-images img {
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    border: 1px solid black; /* Add a black border */
+}
+
+
+
 
 
     </style>
@@ -336,13 +363,39 @@
 		adding a hover feature into the CSS code when developing the website. This allows the text to be consistent until the user hovers over an unknown word that then it will show as a hyperlink to click on. 	
 	</p>
 
-		Kindle is a prime example of seamless reading that has many features including, highlighting, embedded glossary, links to other sections of the text, dark and light mode, and even 
+    <video id="video" autoplay loop muted playsinline>
+        <source src="images/linkexample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    
+    
+
+		<p>Kindle is a prime example of seamless reading that has many features including, highlighting, embedded glossary, links to other sections of the text, dark and light mode, and even 
 		allows the user to change the font and size of the text. This is a 
 		phenomenal way to enhance the reading experience for so many users. Amazon Kindle has a large selection of free contemporary and classical texts for the reader to learn and experience in a productive manner. 
-	
-	<p>
-		Traditional text is something that will always be available and accessible, but with the available technology that users have now text online truly enhances the reading experience to further their learning. 
-	</p>
+
+
+    <!-- Bottom Images Section -->
+<section class="bottom-images">
+    <a href="images/kindle1.png" target="_blank">
+        <img src="images/kindle1.png" alt="Image 1">
+    </a>
+    <a href="images/kindle2.png" target="_blank">
+        <img src="images/kindle2.png" alt="Image 2">
+    </a>
+    <a href="images/kindle3.png" target="_blank">
+        <img src="images/kindle3.png" alt="Image 3">
+    </a>
+    <a href="images/kindle4.png" target="_blank">
+        <img src="images/kindle4.png" alt="Image 4">
+    </a>
+</section>
+
+<p>
+    Traditional text is something that will always be available and accessible, but with the available technology that users have now text online truly enhances the reading experience to further their learning. 
+</p>
+
     </main>
 
     <!-- Footer Section -->
