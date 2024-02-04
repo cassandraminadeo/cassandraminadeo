@@ -10,11 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            /* background-color: #f4f4f4; */
-            
         }
-
-        
 
         header {
             background-color: #333;
@@ -22,11 +18,10 @@
             padding: 20px 0;
             text-align: center;
             background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);
-	        background-size: 400% 10%;
-	        animation: animate 8s ease infinite;
-	        height: 10vh;
+            background-size: 400% 10%;
+            animation: animate 8s ease infinite;
+            height: 10vh;
             z-index: 1;
-            
         }
 
         @keyframes animate {
@@ -39,12 +34,11 @@
             100% {
                 background-position: 0% 50%;
             }
-}
+        }
 
         header h1 {
             margin: 0;
             font-size: 36px;
-
         }
 
         nav {
@@ -63,18 +57,18 @@
             border-radius: 15px;
             transition: background-color 0.3s ease, color 0.3s ease;
             display: inline-block;
-            
             background-color: #333;
             display: inline-block;
             width: 35%;
         }
 
         .main-nav a:hover {
-            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);;
+            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);
+            ;
             color: #fff;
             background-size: 400% 10%;
-	        animation: animate 8s ease infinite;
-	        height: 2.5vh;
+            animation: animate 8s ease infinite;
+            height: 2.5vh;
             z-index: 1;
         }
 
@@ -98,11 +92,12 @@
         }
 
         .homework-links a:hover {
-            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);;
+            background: linear-gradient(-45deg, #2d080a, #7c3626, #f5853f, #ffcdbc);
+            ;
             color: #fff;
             background-size: 400% 10%;
-	        animation: animate 5s ease infinite;
-	        height: 1.75vh;
+            animation: animate 5s ease infinite;
+            height: 1.75vh;
             z-index: 1;
         }
 
@@ -119,23 +114,22 @@
         }
 
         .social-media {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Add margin from the content above */
-}
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
 
-.social-link {
-    text-decoration: none;
-    color: #333;
-    padding: 5px; /* Adjust padding as needed */
-    margin: 0 5px; /* Add margin between links */
-}
+        .social-link {
+            text-decoration: none;
+            color: #333;
+            padding: 5px;
+            margin: 0 5px;
+        }
 
-.social-link img {
-    width: 20px; /* Adjust the width of the social media icons */
-    height: 20px; /* Adjust the height of the social media icons */
-}
-
+        .social-link img {
+            width: 20px;
+            height: 20px;
+        }
 
         img {
             max-width: 100%;
@@ -201,79 +195,36 @@
             cursor: pointer;
         }
 
-        .image-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
+        .image-placeholder {
+            text-align: center;
+            margin-top: 20px;
+            text-align: center;
+            margin-top: 20px;
+            width: 50%; /* Adjust the width of the container */
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
 
-.grid-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-    padding-top: 100%; /* Maintain a square aspect ratio (1:1) */
-    background-color: #ddd; /* Gray background color */
-}
+        .image-placeholder img {
+            width: auto; /* Adjust image width as needed */
+            height: auto; /* Adjust image height as needed */
+            margin: 10px;
+            justify-items: center;
+            border: 2px solid #333;
+            
+        }
 
-.grid-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
-}
+        .preview-container {
+            width: 80%; /* Adjust the width as needed */
+            margin: 0 auto;
+        }
 
-/* Cool Button Stuff */
-
-.btn-two {
-  color: #FFF;
-  transition: all 0.5s;
-  position: relative; 
-}
-.btn-two span {
-  z-index: 2; 
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%; 
-}
-.btn-two::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.5s;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: rgba(255,255,255,0.1);
-}
-.btn-two:hover::before {
-  transform: rotate(-45deg);
-  background-color: rgba(255,255,255,0);
-}
-.btn-two:hover::after {
-  transform: rotate(45deg);
-  background-color: rgba(255,255,255,0);
-}
-
-/* Back Button */
+        iframe {
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+            border: 1px solid #ccc;
+        }         
 
 
     </style>
@@ -287,8 +238,6 @@
     </header>
 
     <nav class="main-nav">
-
-        
         <a href="index.html">Home Page</a>
     </nav>
 
@@ -314,26 +263,72 @@
             awareness, fostering dialogue, and creating change (for example, by highlighting successes). Be
             sure to provide links as needed.</p>
         <h2> Response </h2>
-        <p> Assignment is being pondered. </p>
+        <p> Activism that can be taken to the internet allows for such a successful widespread for the cause at hand. It can use 
+            several media platforms to share the cause to mass populations around the world. This is so successful because the access 
+            to internet is so much higher as everyday passes and allows for so many people to join the cause. The #Metoo movement has 
+            taken the world by storm is the best way possible to empower so many women to feel the confidence and safety to come 
+            forward about sexual assault. This movement made great prominence in 2019 that gave so many people the opportunity to 
+            come forward about the experiences that they went through.  </p>
 
+        <p> <i> The movement is credited with giving visibility to the scope of sexual violence within the United States and 
+            across the world. It is also defined by a push for accountability, including examining power structures in the workplace 
+            that had enabled misconduct, and, in some cases, renewed efforts to seek justice for survivors through criminal and civil 
+            court systems. In the first year of the movement, numerous prominent men lost their jobs after they were publicly 
+            accused of wrongdoing. (Brittain)</i></p>  
+        
+        <p> Social media has been a great way to engage many people in this movement and help provide involvement for anyone who so 
+            chooses. Change.org is a website that dedicates petitions for causes either locally, nationally, or even globally. 
+            Specifically for the #Metoo movement, there are so many petitions for people to sign to be apart of the change. 
+            Petitions include: </p>
+
+        <!-- Image placeholders -->
+        <div class="image-placeholder">
+            <img src="images/metoo1.jpg" alt="Image 1">
+            <img src="images/metoo2.jpg" alt="Image 2">
+            <img src="images/metoo3.jpg" alt="Image 3">
+            
+        </div>
+
+        <p> These petitions are just a few of thousands to spread the words of sexual abuse, sexual assault, and sexual violence. 
+            The #Metoo movement has made so much progress on their popular hashtag alone. It allows for so many social media users 
+            to share there story and have it in a place where the community can see and support. Social Media like Facebook, 
+            Instagram, Reddit, etc. all allow for supporters of the movement to connect and meet people who may have similar stories. 
+            This movement also pushes for accountability for those who have committed these mortifying crimes to face justice. </p>
+
+            <div class="image-placeholder">
+                <img src="images/metoo4.jpg" alt="Image 4">
+            </div>   
+            
+            <div class="preview-container">
+                <iframe src="https://metoomvmt.org" title="#Metoo Website"></iframe>
+            </div>
+
+        <p> The #Metoo movement also has their own website that allows for supporters to see how they are able to help and be apart 
+            of work that is taking place. Their webpage gives the chance for people to donate to programs of their choosing that 
+            includes, Programs for Survivors, Political Engagement, Amplify the Movement, Corporate Partnerships, and Growing Out 
+            Global Network. They also help survivors and those who wish to support the cause join in marches and rallies. The #Metoo 
+            movement gives so many women a voice that did not feel like they had prior, it allows for a safe space for individuals to 
+            come forwards about the experiences they had suffered and has to deal with alone for so long. </p>    
+
+        <h2> Citations </h2>
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 CassandraMinadeo. All rights reserved.</p>
 
-             <!-- Social Media Links -->
-             <div class="social-media">
-                <a href="https://www.goodreads.com/user/show/139882967-cassie-minadeo" target="_blank" class="social-link">
-                    <img src="images/goodreads.png" alt="Goodreads">
-                </a>
-                <a href="https://www.instagram.com/cassie_minadeo/?next=%2F" target="_blank" class="social-link">
-                    <img src="images/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/in/cassie-minadeo-326513203/" target="_blank" class="social-link">
-                    <img src="images/linkedin.png" alt="LinkedIn">
-                </a>
-            </div>
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <a href="https://www.goodreads.com/user/show/139882967-cassie-minadeo" target="_blank" class="social-link">
+                <img src="images/goodreads.png" alt="Goodreads">
+            </a>
+            <a href="https://www.instagram.com/cassie_minadeo/?next=%2F" target="_blank" class="social-link">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/cassie-minadeo-326513203/" target="_blank" class="social-link">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
     </footer>
 
     <!-- Scrolling Section -->
@@ -375,45 +370,6 @@
             homeSection.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-
-<script>
-    var carousel = document.querySelector('.carousel-inner');
-    var items = document.querySelectorAll('.carousel-item');
-    var currentIndex = 0;
-    var totalItems = items.length;
-
-    function showNextSlide() {
-        if (currentIndex < totalItems - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateCarousel();
-    }
-
-    function showPrevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalItems - 1;
-        }
-        updateCarousel();
-    }
-
-    function updateCarousel() {
-        var newTransformValue = -currentIndex * (100 / totalItems) + '%';
-        carousel.style.transform = 'translateX(' + newTransformValue + ')';
-    }
-
-    // Change slide every 3 seconds (adjust as needed)
-    setInterval(showNextSlide, 3000);
-
-    // Add event listeners for arrow clicks
-    document.querySelector('.prev').addEventListener('click', showPrevSlide);
-    document.querySelector('.next').addEventListener('click', showNextSlide);
-</script>
-
-
 
 </body>
 
