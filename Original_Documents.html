@@ -2,200 +2,152 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cassandra Minadeo</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cassandra Minadeo - Original Documents</title>
 
-        header {
-            position: relative;
-            color: #fff;
-            padding: 400px 0 80px 0;
-            text-align: center;
-            overflow: hidden;
-            z-index: 1;
-        }
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+}
 
-        header video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
+/* ---------- NAVIGATION ---------- */
+.top-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
-
-        header h2 {
-            margin: 10px 0 0 0;
-            font-size: 20px;
-        }
-
-        /* Top Navigation Header */
-        .top-header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-        }
-
-        .nav-bar {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 10px 0;
-            gap: 30px;
-        }
-
-        .nav-menu li {
-            position: relative;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 8px 16px;
-            display: block;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Dropdown menu with slide down */
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: rgba(20, 20, 20, 0.75); /* semi-transparent */
-            backdrop-filter: blur(5px); /* subtle blur behind dropdown */
-            list-style: none;
-            padding: 5px 0;
-            margin: 0;
-            min-width: 180px;
-            border-radius: 12px;
-            max-height: 0;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: max-height 0.6s ease, opacity 0.6s ease;
-            opacity: 0;
-        }
-
-        .dropdown-menu li a {
-            padding: 10px 20px;
-            font-size: 14px;
-            display: block;
-            border-radius: 6px;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Show dropdown on hover with smooth slide */
-        .dropdown:hover .dropdown-menu {
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        .nav-menu a:hover,
-        .dropdown-menu a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        main {
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-
-        .about-me-section,
-        .contact-section {
-            background-color: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .social-link {
-            text-decoration: none;
-            color: #333;
-            padding: 5px;
-            margin: 0 5px;
-        }
-
-        .social-link img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .grid-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            width: 100%;
-            padding-top: 100%;
-            background-color: #ddd;
-        }
-
-        .grid-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* ===== Document Tiles ===== */
-
-.document-grid {
+.nav-bar {
     max-width: 1200px;
-    margin: 40px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ---------- DROPDOWN ---------- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(5px);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 220px;
+    border-radius: 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.dropdown-menu li a {
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- HEADER VIDEO ---------- */
+header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* subtle overlay */
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+/* ---------- CONTENT SECTION ---------- */
+.about-me-section {
+    max-width: 800px;
+    margin: -80px auto 60px auto;
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.about-me-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ---------- DOCUMENT LIST ---------- */
+.document-grid {
+    display: block; /* stack vertically */
+    gap: 20px;
 }
 
 .document-tile {
+    display: flex;
+    flex-direction: column; /* image on top, text below */
     text-decoration: none;
     color: inherit;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
+    margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -207,8 +159,7 @@
 
 .document-tile img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
@@ -227,117 +178,93 @@
     color: #777;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .document-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* ---------- FOOTER ---------- */
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
 }
-
-@media (max-width: 600px) {
-    .document-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-    </style>
+</style>
 </head>
 
 <body>
 
-    <!-- Top Navigation Header -->
-    <div class="top-header">
-        <nav class="nav-bar">
-            <ul class="nav-menu">
-                <li class="dropdown">
-                    <a href="index.html">Home</a>
-                </li>
+<!-- NAVIGATION -->
+<div class="top-header">
+<nav class="nav-bar">
+<ul class="nav-menu">
+    <li class="dropdown"><a href="index.html">Home</a></li>
+    <li class="dropdown"><a href="Cover_Letter.html">Cover Letter</a></li>
+    <li class="dropdown">
+        <a href="#">Portfolio</a>
+        <ul class="dropdown-menu">
+            <li><a href="AI_Created_Book_Covers.html">Artificial Intelligent Created Book Covers</a></li>
+            <li><a href="Noun_Type_Combinations_in_CS.html">Noun-Noun and Adjective-Noun Combinations in Computer Science Journal Writings</a></li>
+            <li><a href="Phishing_fora_GG.html">Phishing for a Game</a></li>
+            <li><a href="Original_Documents.html">Original Documents</a></li>
+        </ul>
+    </li>
+</ul>
+</nav>
+</div>
 
-                <li class="dropdown">
-                    <a href="Cover_Letter.html">Cover Letter</a>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#">Portfolio</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="AI_Created_Book_Covers.html">Artificial Intelligent Created Book Covers</a></li>
-                        <li><a href="Noun_Type_Combinations_in_CS.html">Noun-Noun and Adjective-Noun Combinations in Computer Science Journal Writings </a></li>
-                        <li><a href="Phishing_fora_GG.html">Phishing for a Game</a></li>
-                        <li><a href="Original_Documents.html">Original Documents</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
+<!-- HEADER VIDEO -->
+<header>
+<video autoplay muted loop playsinline>
+    <source src="images/OGVideo.mp4" type="video/mp4">
+</video>
+</header>
 
-    <header>
-        <video autoplay muted loop playsinline>
-            <source src="images/OGVideo.mp4" type="video/mp4">
-        </video>
-        
-    </header>
+<!-- ORIGINAL DOCUMENTS CONTENT -->
+<section class="about-me-section">
+<h2>Original Documents</h2>
+<div class="document-grid">
 
-    <div class="about-me-section" id="about-me-section">
-        <div class="about-me-content">
-            <h2>Original Documents</h2>
-            <div class="document-grid">
-
-                <a href="documents/AI Book Covers.pdf" target="_blank" class="document-tile">
-                    <img src="images/AIDocCover.png" alt="Document cover">
-                    <div class="document-info">
-                        <h3>Artificial Intelligent Created Book Covers</h3>
-                        <p class="doc-date">Spring 2025</p>
-                    </div>
-                </a>
-            
-                <a href="documents/Noun-Noun and Adjective-Noun Combinations in Computer Science .pdf" target="_blank" class="document-tile">
-                    <img src="images/NNDocCover.png" alt="Document cover">
-                    <div class="document-info">
-                        <h3>Noun-Noun and Adjective-Noun Combinations in Computer Science Journal Writings</h3>
-                        <p class="doc-date">Spring 2025</p>
-                    </div>
-                </a>
-            
-                <a href="https://flowlab.io/games/play/2918107"
-                    target="_blank"
-                    class="document-tile">
-
-                    <img src="images/PFAGGCover.png" alt="Document cover">
-                    <div class="document-info">
-                        <h3>Phishing for a Good Game</h3>
-                        <p class="doc-date">Fall 2025</p>
-                    </div>
-                </a>
-            
-            </div>
-            
-            
+    <a href="documents/AI Book Covers.pdf" target="_blank" class="document-tile">
+        <img src="images/AIDocCover.png" alt="Document cover">
+        <div class="document-info">
+            <h3>Artificial Intelligent Created Book Covers</h3>
+            <p class="doc-date">Spring 2025</p>
         </div>
-    </div>
-</main>
+    </a>
 
-    <footer>
-        <p>&copy; 2024 CassandraMinadeo. All rights reserved.</p>
-        <div class="social-media">
-            <a href="#" class="social-link"><img src="images/goodreads.png" alt="Goodreads"></a>
-            <a href="#" class="social-link"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-link"><img src="#" alt="LinkedIn"></a>
+    <a href="documents/Noun-Noun and Adjective-Noun Combinations in Computer Science .pdf" target="_blank" class="document-tile">
+        <img src="images/NNDocCover.png" alt="Document cover">
+        <div class="document-info">
+            <h3>Noun-Noun and Adjective-Noun Combinations in Computer Science Journal Writings</h3>
+            <p class="doc-date">Spring 2025</p>
         </div>
-    </footer>
+    </a>
 
-    <!-- Smooth scrolling -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+    <a href="https://flowlab.io/games/play/2918107" target="_blank" class="document-tile">
+        <img src="images/PFAGGCover.png" alt="Document cover">
+        <div class="document-info">
+            <h3>Phishing for a Good Game</h3>
+            <p class="doc-date">Fall 2025</p>
+        </div>
+    </a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2024 Cassandra Minadeo. All rights reserved.</p>
+</footer>
+
+<!-- Smooth scrolling -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
-    </script>
+    });
+});
+</script>
 
 </body>
-
 </html>
