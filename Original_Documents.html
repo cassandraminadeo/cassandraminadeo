@@ -179,6 +179,68 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* ===== Document Tiles ===== */
+
+.document-grid {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.document-tile {
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.document-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.document-tile img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.document-info {
+    padding: 20px;
+}
+
+.document-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.doc-date {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .document-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
     </style>
 </head>
 
@@ -219,7 +281,37 @@
     <div class="about-me-section" id="about-me-section">
         <div class="about-me-content">
             <h2>Original Documents</h2>
-            <p>Yada yada </p>
+            <div class="document-grid">
+
+                <a href="documents/AI Book Covers.pdf" target="_blank" class="document-tile">
+                    <img src="images/AIDocCover.png" alt="Document cover">
+                    <div class="document-info">
+                        <h3>Artificial Intelligent Created Book Covers</h3>
+                        <p class="doc-date">Spring 2025</p>
+                    </div>
+                </a>
+            
+                <a href="documents/Noun-Noun and Adjective-Noun Combinations in Computer Science .pdf" target="_blank" class="document-tile">
+                    <img src="images/NNDocCover.png" alt="Document cover">
+                    <div class="document-info">
+                        <h3>Noun-Noun and Adjective-Noun Combinations in Computer Science Journal Writings</h3>
+                        <p class="doc-date">Spring 2025</p>
+                    </div>
+                </a>
+            
+                <a href="https://flowlab.io/games/play/2918107"
+                    target="_blank"
+                    class="document-tile">
+
+                    <img src="images/PFAGGCover.png" alt="Document cover">
+                    <div class="document-info">
+                        <h3>Phishing for a Good Game</h3>
+                        <p class="doc-date">Fall 2025</p>
+                    </div>
+                </a>
+            
+            </div>
+            
             
         </div>
     </div>
