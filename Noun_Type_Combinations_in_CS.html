@@ -50,7 +50,7 @@ body {
     font-weight: bold;
     padding: 8px 16px;
     border-radius: 6px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .nav-menu a:hover {
@@ -73,7 +73,7 @@ body {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.6s ease, opacity 0.6s ease;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -85,7 +85,6 @@ body {
     padding: 12px 20px;
     display: block;
     font-size: 14px;
-    transition: background-color 0.3s ease;
     border-radius: 6px;
 }
 
@@ -96,7 +95,7 @@ body {
 /* ---------- HEADER VIDEO ---------- */
 header {
     position: relative;
-    height: 300px; /* subtle header */
+    height: 300px;
     overflow: hidden;
 }
 
@@ -109,7 +108,6 @@ header video {
     z-index: -2;
 }
 
-/* subtle overlay */
 header::after {
     content: "";
     position: absolute;
@@ -120,8 +118,8 @@ header::after {
 
 /* ---------- SECTION ---------- */
 .noun-adj-section {
-    max-width: 800px;
-    margin: -80px auto 60px auto; /* overlap header slightly */
+    max-width: 900px;
+    margin: -80px auto 60px auto;
     background: #fff;
     padding: 50px 40px;
     border-radius: 16px;
@@ -138,6 +136,93 @@ header::after {
     margin-bottom: 16px;
 }
 
+/* ---------- TABLE WRAPPER ---------- */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ---------- MOBILE MESSAGE ---------- */
+.table-message {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ---------- COOL TABLE ---------- */
+.content-table {
+    width: auto;
+    min-width: 700px;
+    border-collapse: collapse;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Caption */
+.content-table caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.content-table thead {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+}
+
+/* Cells */
+.content-table th,
+.content-table td {
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+/* Zebra */
+.content-table tbody tr:nth-child(even) {
+    background-color: #f8faff;
+}
+
+/* Hover row */
+.content-table tbody tr:hover {
+    background-color: #e6ecff;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Subtle header polish */
+.content-table th {
+    letter-spacing: 0.4px;
+}
+
+/* ---------- RESPONSIVE ANIMATION ---------- */
+@media (max-width: 768px) {
+    .table-wrapper {
+        opacity: 0;
+        transform: translateY(25px);
+        pointer-events: none;
+    }
+
+    .table-message {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---------- FOOTER ---------- */
 footer {
     background: #111;
@@ -145,18 +230,6 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 60px;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.social-link img {
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
 }
 </style>
 </head>
@@ -203,6 +276,97 @@ footer {
 <p> These journals were selected on the basis of relevance to the target academic discipline and their status as both seminal and current research. The data set comprises 3,104 words of text from the abstracts of the fifteen articles. This information was analyzed for three types of lexical structures: noun-noun combinations, adjective-noun combinations, and verb-noun combinations. Analysis was manual, with the researcher's knowledgeable understanding of discipline-specific and non-discipline-specific lexicon informing identification and categorization of each instance.
 <br> <br> One of the first significant findings from the data is the proportion of discipline-specific to non-discipline-specific words. Of all the noun-noun combinations that were identified in the abstracts, 60.47% were discipline-specific, and 39.54% were non-discipline-specific. This suggests that noun-noun combinations are more likely to convey technical or specialized concepts that are closely associated with the discourse community of the discipline. In comparison, adjective-noun combinations not only appeared more often but also switched in the instances shown in discipline versus non-discipline specific. That is, 80.30% of the adjective-noun combinations were non-discipline-specific, and a mere 19.70% were discipline-specific. This may indicate that adjective-noun combinations are more linguistically functional and general, bridging technical terminology and more general academic terminology. This is seen as well with verb-noun combinations, with 69.5% of instances being non-discipline specific, and when in conjunction with noun-noun combinations or adjective-noun combinations, only 18.2% of those combinations were in fact discipline specific. 
 <br> <br> In regard to the complex combinations, they are the least represented instances in the abstracts, but discipline-specific combinations of both show prevalence over the non-discipline-specific combinations of both by 8.75% of the 423 total instances. Of all the combinations of noun-noun and adjective-noun combinations, the combinations of both only make up 12.53% of all of the phrases present. Additionally, when looking at the verb-noun combinations, they are almost evenly split between noun-noun combinations at 29.1% and adjective-noun combinations at 30.9% of the 275 instances. </p>
+<div class="table-wrapper">
+<table class="content-table">
+  <caption>Table 1: Total Combination Count among Categories</caption>
+
+  <thead>
+    <tr>
+      <th>Total Noun-Noun</th>
+      <th>Discipline-Specific</th>
+      <th>Non-Discipline</th>
+      <th>Total Adjective-Noun</th>
+      <th>Discipline-Specific</th>
+      <th>Non-Discipline</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>172</td>
+      <td>104</td>
+      <td>68</td>
+      <td>198</td>
+      <td>39</td>
+      <td>159</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="3">Combination of Both</th>
+      <th colspan="3">Combination of Both</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td colspan="3">37 (Discipline-Specific)</td>
+      <td colspan="3">16 (Non-Discipline)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="table-message">
+    Screen is too small to display this table. Please view on a larger device.
+</p>
+
+<div class="table-wrapper">
+<table class="content-table">
+  <caption>Table 2: Total Verb-Noun Combination Count among Categories
+</caption>
+
+  <thead>
+    <tr>
+      <th>Independent Verb-Noun Combinations</th>
+      <th>Discipline-Specific Verb-Noun & Noun-Noun Combinations</th>
+      <th>Non-Discipline Specific Verb-Noun & Noun-Noun Combinations</th>
+      <th>Discipline-Specific Total Verb-Noun & Adjective-Noun Combinations</th>
+      <th>Non-Discipline Specific Verb-Noun & Adjective-Noun Combinations</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>110</td>
+      <td>49</td>
+      <td>31</td>
+      <td>14</td>
+      <td>71</td>
+    </tr>
+  </tbody>
+
+  <thead>
+    <tr>
+      <th colspan="3">Discipline-Specific Independent Verb-Noun Combinations</th>
+      <th colspan="2">Non-Discipline Specific Independent Verb-Noun Combinations</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td colspan="3">20 (Discipline-Specific)</td>
+      <td colspan="3">90 (Non-Discipline)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="table-message">
+    Screen is too small to display this table. Please view on a larger device.
+</p>
+
 <br> <p> Although noun–noun phrases are typically more prevalent in discipline-specific writing, Abstract Six presents a notable exception: it contains only two noun–noun combinations compared to eight adjective–noun combinations. This deviation is particularly noteworthy because, while uncommon, such variations do occur and highlight the stylistic flexibility that can exist within academic writing. There is also an exception when it comes to Abstract One’s discipline-specific verb-noun combinations. This is the only abstract where the discipline-specific combinations outweigh the non-discipline-specific verb-noun combinations. Recognizing these outliers is important, as they can offer insight into the author's rhetorical choices and the emphasis placed on descriptive precision. Refer to Table 3 and Table 4 to show the representation of a full breakdown of all of the combinations in each abstract. Refer to Table 5 and Table 6 to see a broad overview of the analysis.</p>
 <br> <p> These results suggest an incipient pattern of lexical use in academic writing in the discipline. Noun-noun combinations appear to have a more precise, field-specific communicative function, while adjective-noun combinations allow for greater descriptive latitude. Furthermore, the use of the verb-noun combinations can be seen to interact with the use of the noun-noun or adjective-noun combinations, as the noun phrase that follows the verb often appears to contain technical compounds. Identification of the pattern and application of these lexical pairs can inform subsequent knowledge of the conventions of academic writing and assist in guiding future work in genre-sensitive language instruction or corpus-based inquiry. Further research on a larger data set will be required to confirm whether these trends are accurate across a broader spectrum of texts.</p>
 <h3> Discussion</h3>
