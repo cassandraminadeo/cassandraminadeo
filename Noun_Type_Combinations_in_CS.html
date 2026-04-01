@@ -120,7 +120,7 @@ header::after {
 /* ---------- SECTION ---------- */
 .noun-adj-section {
     max-width: 900px;
-    margin: -80px auto 60px auto;
+    margin: 40px auto 60px auto;
     background: #fff;
     padding: 50px 40px;
     border-radius: 16px;
@@ -232,6 +232,57 @@ footer {
     padding: 20px;
     margin-top: 60px;
 }
+
+/* ---------- REFERENCES DROPDOWN ---------- */
+.references-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+    
+
+    position: relative;
+    z-index: 5;
+}
+
+.references-toggle {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+    border: none;
+    padding: 15px 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.references-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.references-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.3s ease;
+    background: #fff;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+
+.references-content p {
+    text-align: left;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* OPEN STATE */
+.references-content.open {
+    max-height: 500px; /* enough space for content */
+    padding: 20px;
+}
+
 </style>
 </head>
 
@@ -399,7 +450,19 @@ footer {
 <h3> Reflection</h3>
 <p> I have a BA in computer science with a minor in mathematics. I am also currently earning my master’s at ODU in English, with a focus in technical writing. Career-wise, I currently work in the STEM field as a technical writer and a C#/Unity programmer. I have spent the last seven years of my life working in STEM, and I thought this would be a great topic to delve into. I honestly really enjoyed this research, and as far as my technical writing background goes, it was extremely valuable. In this class and with this paper, grammar tools and structures are obviously everywhere, but this is the first time I truly paid them any attention. This is so important in technical writing, given the heavy communication we have with engineers and the challenge of conveying their speech in ways that users can understand. I found this especially prevalent in these extremely technical abstracts. I enjoyed spending time with this subject and learning more about a side of the field I haven't explored much before.</p>
 
+<div class="references-container">
+  <button class="references-toggle">
+    References ▼
+  </button>
 
+  <div class="references-content">
+    <p> Spangler, E. R. (1956). Modern grammar and its application to technical writing. Journal of Chemical Education, 33(2), 61. https://doi.org/10.1021/ed033p61
+<br><br>  Raffray, C. N., Pickering, M. J., & Branigan, H. P. (2007). Priming the interpretation of noun–noun combinations. Journal of Memory and Language, 57(3), 380–395. https://doi.org/10.1016/j.jml.2007.06.009
+<br><br> Draskovic, I., Pustejovsky, J., & Schreuder, R. (2013). Adjective-noun combinations and the generative lexicon. In Proceedings of the 46th Annual Meeting of the Cognitive Science Society (pp. 181–202). https://doi.org/10.1007/978-94-007-5189-7
+<br><br> Murphy, G. L. (1990). Noun phrase interpretation and conceptual combination. Journal of Memory and Language, 29(3), 259–288. https://doi.org/10.1016/0749-596X(90)90001-G
+<br><br> Wang, Y., Ge, T., & Ren, Z. (2022). Noun phrasal complexity in computer science conference abstracts: A corpus-based study. International Journal of Computer-Assisted Language Learning and Teaching, 12, 1–17. https://doi.org/10.4018/IJCALLT.311096</p>
+  </div>
+</div>
 
 </section>
 
@@ -422,264 +485,203 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 <!-- CHART.JS -->
+<!-- CHART.JS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-// ---- Chart 1: Noun/Adjective Combinations ----
-const ctx1 = document.getElementById('combinationsChart').getContext('2d');
-const data1 = {
-  labels: [
-    "Abstract 1","Abstract 2","Abstract 3","Abstract 4","Abstract 5",
-    "Abstract 6","Abstract 7","Abstract 8","Abstract 9","Abstract 10",
-    "Abstract 11","Abstract 12","Abstract 13","Abstract 14","Abstract 15"
-  ],
-  datasets: [
-    {
-      label: 'Discipline Specific Noun-Noun',
-      data: [14,5,3,9,4,2,3,6,3,9,12,5,11,8,10],
-      borderColor: '#667eea',
-      backgroundColor: 'rgba(102,126,234,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Non-Discipline Specific Noun-Noun',
-      data: [4,0,7,2,2,1,11,6,3,15,0,5,7,2,3],
-      borderColor: '#764ba2',
-      backgroundColor: 'rgba(118,75,162,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Discipline Specific Adjective-Noun',
-      data: [0,1,4,2,0,8,1,5,0,3,4,1,5,2,3],
-      borderColor: '#ff6b6b',
-      backgroundColor: 'rgba(255,107,107,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Non-Discipline Specific Adjective-Noun',
-      data: [10,15,20,14,7,0,6,9,9,17,10,11,10,14,7],
-      borderColor: '#fbc531',
-      backgroundColor: 'rgba(251,197,49,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Discipline Specific Combination of Both',
-      data: [1,3,2,16,0,3,1,3,0,1,1,1,0,2,3],
-      borderColor: '#00b894',
-      backgroundColor: 'rgba(0,184,148,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Non-Discipline Specific Combination of Both',
-      data: [0,1,3,0,5,0,1,3,0,0,0,2,0,0,1],
-      borderColor: '#0984e3',
-      backgroundColor: 'rgba(9,132,227,0.2)',
-      tension: 0.3,
-      fill: true
-    }
-  ]
-};
-const config1 = {
+// -------------------- CHART 1 --------------------
+const ctx1 = document.getElementById('combinationsChart')?.getContext('2d');
+if (ctx1) {
+new Chart(ctx1, {
   type: 'line',
-  data: data1,
+  data: {
+    labels: [
+      "Abstract 1","Abstract 2","Abstract 3","Abstract 4","Abstract 5",
+      "Abstract 6","Abstract 7","Abstract 8","Abstract 9","Abstract 10",
+      "Abstract 11","Abstract 12","Abstract 13","Abstract 14","Abstract 15"
+    ],
+    datasets: [
+      {
+        label: 'Discipline Specific Noun-Noun',
+        data: [14,5,3,9,4,2,3,6,3,9,12,5,11,8,10],
+        borderColor: '#667eea',
+        backgroundColor: 'rgba(102,126,234,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Non-Discipline Specific Noun-Noun',
+        data: [4,0,7,2,2,1,11,6,3,15,0,5,7,2,3],
+        borderColor: '#764ba2',
+        backgroundColor: 'rgba(118,75,162,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Discipline Specific Adjective-Noun',
+        data: [0,1,4,2,0,8,1,5,0,3,4,1,5,2,3],
+        borderColor: '#ff6b6b',
+        backgroundColor: 'rgba(255,107,107,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Non-Discipline Specific Adjective-Noun',
+        data: [10,15,20,14,7,0,6,9,9,17,10,11,10,14,7],
+        borderColor: '#fbc531',
+        backgroundColor: 'rgba(251,197,49,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Discipline Specific Combination of Both',
+        data: [1,3,2,16,0,3,1,3,0,1,1,1,0,2,3],
+        borderColor: '#00b894',
+        backgroundColor: 'rgba(0,184,148,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Non-Discipline Specific Combination of Both',
+        data: [0,1,3,0,5,0,1,3,0,0,0,2,0,0,1],
+        borderColor: '#0984e3',
+        backgroundColor: 'rgba(9,132,227,0.2)',
+        tension: 0.3,
+        fill: true
+      }
+    ]
+  },
   options: {
     responsive: true,
     interaction: { mode: 'index', intersect: false },
     plugins: {
-      legend: { position: 'top', labels: { usePointStyle: true, pointStyle: 'circle' } },
+      legend: { position: 'top' },
       tooltip: { mode: 'index', intersect: false }
     },
     scales: {
-      y: { beginAtZero: true, title: { display: true, text: 'Number of Combinations' } },
-      x: { title: { display: true, text: 'Abstracts' } }
-    },
-    animation: { duration: 1500, easing: 'easeOutQuart' }
-  }
-};
-new Chart(ctx1, config1);
-
-// ---- Chart 2: Verb/Adj Combinations ----
-const ctx2 = document.getElementById('verbAdjChart').getContext('2d');
-const data2 = {
-  labels: [
-    "Abstract 1","Abstract 2","Abstract 3","Abstract 4","Abstract 5",
-    "Abstract 6","Abstract 7","Abstract 8","Abstract 9","Abstract 10",
-    "Abstract 11","Abstract 12","Abstract 13","Abstract 14","Abstract 15"
-  ],
-  datasets: [
-    {
-      label: 'Discipline Specific Verb-Noun & Noun-Noun',
-      data: [15,3,0,2,2,3,1,3,3,4,5,2,2,2,5],
-      borderColor: '#667eea',
-      backgroundColor: 'rgba(102,126,234,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Non-Discipline Specific Verb-Noun & Noun-Noun',
-      data: [2,2,2,0,5,1,5,4,1,5,0,2,2,0,0],
-      borderColor: '#764ba2',
-      backgroundColor: 'rgba(118,75,162,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Discipline Specific Verb-Noun & Adjective-Noun',
-      data: [1,0,1,0,0,0,0,2,0,1,1,1,2,2,0],
-      borderColor: '#ff6b6b',
-      backgroundColor: 'rgba(255,107,107,0.2)',
-      tension: 0.3,
-      fill: true
-    },
-    {
-      label: 'Non-Discipline Specific Verb-Noun & Adjective-Noun',
-      data: [1,8,8,8,5,1,6,5,4,7,4,5,2,4,3],
-      borderColor: '#fbc531',
-      backgroundColor: 'rgba(251,197,49,0.2)',
-      tension: 0.3,
-      fill: true
+      y: { beginAtZero: true },
+      x: {}
     }
-  ]
-};
-const config2 = {
+  }
+});
+}
+
+// -------------------- CHART 2 --------------------
+const ctx2 = document.getElementById('verbAdjChart')?.getContext('2d');
+if (ctx2) {
+new Chart(ctx2, {
   type: 'line',
-  data: data2,
-  options: {
-    responsive: true,
-    interaction: { mode: 'index', intersect: false },
-    plugins: {
-      legend: { position: 'top', labels: { usePointStyle: true, pointStyle: 'circle' } },
-      tooltip: { mode: 'index', intersect: false }
-    },
-    scales: {
-      y: { beginAtZero: true, title: { display: true, text: 'Number of Combinations' } },
-      x: { title: { display: true, text: 'Abstracts' } }
-    },
-    animation: { duration: 1500, easing: 'easeOutQuart' }
+  data: {
+    labels: [
+      "Abstract 1","Abstract 2","Abstract 3","Abstract 4","Abstract 5",
+      "Abstract 6","Abstract 7","Abstract 8","Abstract 9","Abstract 10",
+      "Abstract 11","Abstract 12","Abstract 13","Abstract 14","Abstract 15"
+    ],
+    datasets: [
+      {
+        label: 'Discipline Specific Verb-Noun & Noun-Noun',
+        data: [15,3,0,2,2,3,1,3,3,4,5,2,2,2,5],
+        borderColor: '#667eea',
+        backgroundColor: 'rgba(102,126,234,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Non-Discipline Specific Verb-Noun & Noun-Noun',
+        data: [2,2,2,0,5,1,5,4,1,5,0,2,2,0,0],
+        borderColor: '#764ba2',
+        backgroundColor: 'rgba(118,75,162,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Discipline Specific Verb-Noun & Adjective-Noun',
+        data: [1,0,1,0,0,0,0,2,0,1,1,1,2,2,0],
+        borderColor: '#ff6b6b',
+        backgroundColor: 'rgba(255,107,107,0.2)',
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: 'Non-Discipline Specific Verb-Noun & Adjective-Noun',
+        data: [1,8,8,8,5,1,6,5,4,7,4,5,2,4,3],
+        borderColor: '#fbc531',
+        backgroundColor: 'rgba(251,197,49,0.2)',
+        tension: 0.3,
+        fill: true
+      }
+    ]
   }
-};
-new Chart(ctx2, config2);
+});
+}
 
-//Bar Graph 1
-const ctxBar = document.getElementById('summaryBarChart').getContext('2d');
-
-const barData = {
+// -------------------- BAR CHART 1 --------------------
+const ctxBar = document.getElementById('summaryBarChart')?.getContext('2d');
+if (ctxBar) {
+new Chart(ctxBar, {
+  type: 'bar',
+  data: {
     labels: [
-        "Discipline Specific Noun-Noun Combinations",
-        "Non-Discipline Specific Noun-Noun Combinations",
-        "Discipline Specific Adjective-Noun Combinations",
-        "Non-Discipline Specific Adjective-Noun Combinations",
-        "Discipline Specific Combination of Both",
-        "Non-Discipline Specific Combination of Both"
+      "Discipline Specific Noun-Noun",
+      "Non-Discipline Noun-Noun",
+      "Discipline Adjective-Noun",
+      "Non-Discipline Adjective-Noun",
+      "Discipline Both",
+      "Non-Discipline Both"
     ],
     datasets: [{
-        label: 'Number of Combinations',
-        data: [104, 68, 39, 159, 37, 16],
-        backgroundColor: [
-            '#667eea',
-            '#764ba2',
-            '#ff6b6b',
-            '#fbc531',
-            '#00b894',
-            '#0984e3'
-        ],
-        borderColor: [
-            '#667eea',
-            '#764ba2',
-            '#ff6b6b',
-            '#fbc531',
-            '#00b894',
-            '#0984e3'
-        ],
-        borderWidth: 1
+      data: [104, 68, 39, 159, 37, 16],
+      backgroundColor: ['#667eea','#764ba2','#ff6b6b','#fbc531','#00b894','#0984e3']
     }]
-};
+  }
+});
+}
 
-const barConfig = {
-    type: 'bar',
-    data: barData,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                title: { display: true, text: 'Number of Combinations' }
-            },
-            x: {
-                title: { display: true, text: 'Combination Type' }
-            }
-        },
-        animation: { duration: 1500, easing: 'easeOutBounce' }
-    }
-};
-
-new Chart(ctxBar, barConfig);
-
-//Bar Graph 2
-
-const ctxVerb = document.getElementById('verbBarChart').getContext('2d');
-
-const verbBarData = {
+// -------------------- BAR CHART 2 --------------------
+const ctxVerb = document.getElementById('verbBarChart')?.getContext('2d');
+if (ctxVerb) {
+new Chart(ctxVerb, {
+  type: 'bar',
+  data: {
     labels: [
-        "Discipline Specific Verb-Noun & Noun-Noun Combinations",
-        "Non-Discipline Specific Verb-Noun & Noun-Noun Combinations",
-        "Discipline Specific Total Verb-Noun & Adjective-Noun Combinations",
-        "Non-Discipline Specific Verb-Noun & Adjective-Noun Combinations",
-        "Independent Verb-Noun Combinations"
+      "DS Verb-NN",
+      "Non-DS Verb-NN",
+      "DS Verb-Adj",
+      "Non-DS Verb-Adj",
+      "Independent"
     ],
     datasets: [{
-        label: 'Number of Combinations',
-        data: [49, 31, 14, 71, 110],
-        backgroundColor: [
-            '#667eea',
-            '#764ba2',
-            '#ff6b6b',
-            '#fbc531',
-            '#00b894'
-        ],
-        borderColor: [
-            '#667eea',
-            '#764ba2',
-            '#ff6b6b',
-            '#fbc531',
-            '#00b894'
-        ],
-        borderWidth: 1
+      data: [49, 31, 14, 71, 110],
+      backgroundColor: ['#667eea','#764ba2','#ff6b6b','#fbc531','#00b894']
     }]
-};
+  }
+});
+}
 
-const verbBarConfig = {
-    type: 'bar',
-    data: verbBarData,
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false },
-            tooltip: { enabled: true }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                title: { display: true, text: 'Number of Combinations' }
-            },
-            x: {
-                title: { display: true, text: 'Combination Type' }
-            }
-        },
-        animation: { duration: 1500, easing: 'easeOutBounce' }
+// -------------------- SMOOTH SCROLL --------------------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
-};
+  });
+});
 
-new Chart(ctxVerb, verbBarConfig);
+// -------------------- REFERENCES DROPDOWN (FIXED) --------------------
+const toggleBtn = document.querySelector('.references-toggle');
+const content = document.querySelector('.references-content');
 
+if (toggleBtn && content) {
+  toggleBtn.addEventListener('click', () => {
+    content.classList.toggle('open');
+
+    toggleBtn.textContent = content.classList.contains('open')
+      ? "References ▲"
+      : "References ▼";
+  });
+}
 </script>
 
 </body>
