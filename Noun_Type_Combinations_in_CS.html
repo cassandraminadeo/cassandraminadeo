@@ -253,6 +253,9 @@ footer {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
 }
 
 .references-toggle:hover {
@@ -263,7 +266,7 @@ footer {
 .references-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease, padding 0.3s ease;
+    transition: max-height 0.5s ease;
     background: #fff;
     margin-top: 15px;
     border-radius: 12px;
@@ -279,8 +282,13 @@ footer {
 
 /* OPEN STATE */
 .references-content.open {
-    max-height: 500px; /* enough space for content */
+    max-height: none; /* enough space for content */
     padding: 20px;
+}
+
+.hanging-indent {
+    padding-left: 20px;
+    text-indent: -20px;
 }
 
 </style>
@@ -451,17 +459,72 @@ footer {
 <p> I have a BA in computer science with a minor in mathematics. I am also currently earning my master’s at ODU in English, with a focus in technical writing. Career-wise, I currently work in the STEM field as a technical writer and a C#/Unity programmer. I have spent the last seven years of my life working in STEM, and I thought this would be a great topic to delve into. I honestly really enjoyed this research, and as far as my technical writing background goes, it was extremely valuable. In this class and with this paper, grammar tools and structures are obviously everywhere, but this is the first time I truly paid them any attention. This is so important in technical writing, given the heavy communication we have with engineers and the challenge of conveying their speech in ways that users can understand. I found this especially prevalent in these extremely technical abstracts. I enjoyed spending time with this subject and learning more about a side of the field I haven't explored much before.</p>
 
 <div class="references-container">
-  <button class="references-toggle">
-    References ▼
-  </button>
 
+  <!-- REFERENCES -->
+  <button class="references-toggle">References ▼</button>
   <div class="references-content">
-    <p> Spangler, E. R. (1956). Modern grammar and its application to technical writing. Journal of Chemical Education, 33(2), 61. https://doi.org/10.1021/ed033p61
-<br><br>  Raffray, C. N., Pickering, M. J., & Branigan, H. P. (2007). Priming the interpretation of noun–noun combinations. Journal of Memory and Language, 57(3), 380–395. https://doi.org/10.1016/j.jml.2007.06.009
-<br><br> Draskovic, I., Pustejovsky, J., & Schreuder, R. (2013). Adjective-noun combinations and the generative lexicon. In Proceedings of the 46th Annual Meeting of the Cognitive Science Society (pp. 181–202). https://doi.org/10.1007/978-94-007-5189-7
-<br><br> Murphy, G. L. (1990). Noun phrase interpretation and conceptual combination. Journal of Memory and Language, 29(3), 259–288. https://doi.org/10.1016/0749-596X(90)90001-G
-<br><br> Wang, Y., Ge, T., & Ren, Z. (2022). Noun phrasal complexity in computer science conference abstracts: A corpus-based study. International Journal of Computer-Assisted Language Learning and Teaching, 12, 1–17. https://doi.org/10.4018/IJCALLT.311096</p>
+    <p class="hanging-indent">Spangler, E. R. (1956). Modern grammar and its application to technical writing. Journal of Chemical Education, 33(2), 61. https://doi.org/10.1021/ed033p61</p>
+    <p class="hanging-indent">Raffray, C. N., Pickering, M. J., & Branigan, H. P. (2007). Priming the interpretation of noun–noun combinations. Journal of Memory and Language, 57(3), 380–395. https://doi.org/10.1016/j.jml.2007.06.009</p>
+    <p class="hanging-indent">Draskovic, I., Pustejovsky, J., & Schreuder, R. (2013). Adjective-noun combinations and the generative lexicon. In Proceedings of the 46th Annual Meeting of the Cognitive Science Society (pp. 181–202). https://doi.org/10.1007/978-94-007-5189-7</p>
+    <p class="hanging-indent">Murphy, G. L. (1990). Noun phrase interpretation and conceptual combination. Journal of Memory and Language, 29(3), 259–288. https://doi.org/10.1016/0749-596X(90)90001-G</p>
+    <p class="hanging-indent">Wang, Y., Ge, T., & Ren, Z. (2022). Noun phrasal complexity in computer science conference abstracts: A corpus-based study. International Journal of Computer-Assisted Language Learning and Teaching, 12, 1–17. https://doi.org/10.4018/IJCALLT.311096</p>
   </div>
+
+  <!-- REFERENCED BIBLIOGRAPHIES -->
+  <button class="references-toggle">Referenced Bibliographies ▼</button>
+  <div class="references-content">
+    <p class="hanging-indent">Spangler, E. R. (1956). Modern grammar and its application to technical writing. Journal of Chemical Education, 33(2), 61. https://doi.org/10.1021/ed033p61
+<br><br>Modern Grammar and Its Application to Technical Writing, written by E. R. Spangler, discusses the typical grammatical application in technical writing. The nature of writing in technical fields requires incredibly descriptive language, and this journal discusses those regulations and common mishaps writers run into. This work offers valuable insight into how technical communication is enhanced by grammatical accuracy, and therefore, it is particularly relevant to studies of linguistic practice in scientific and academic writing. </p>
+    <p class="hanging-indent"> Raffray, C. N., Pickering, M. J., & Branigan, H. P. (2007). Priming the interpretation of noun–noun combinations. Journal of Memory and Language, 57(3), 380–395. https://doi.org/10.1016/j.jml.2007.06.009
+<br><br>Priming the Interpretation of Noun-Noun Combinations, written by Claudine N. Raffray, Martin J. Pickering, and Holly P. Branigan, gives an overview of how readers interpret noun-noun combinations, specifically focusing on the effects of lexical repetition and semantic relation. This discussion advances the researchers' understanding of how noun-noun combinations are perceived and analyzed.</p>
+    <p class="hanging-indent"> Draskovic, I., Pustejovsky, J., & Schreuder, R. (2013). Adjective-noun combinations and the generative lexicon. In Proceedings of the 46th Annual Meeting of the Cognitive Science Society (pp. 181–202). https://doi.org/10.1007/978-94-007-5189-7
+<br><br>Adjective-Noun Combinations and the Generative Lexicon, written by Irena Drasković, James Pustejovsky, and Rob Schreuder, delves into adjective-noun combinations and their computational complexity and conceptual compatibility. This analysis is crucial in understanding the significance of adjective-noun combinations, a discipline-specific complexity often present in technology-based academic journals and technical writings across various subfields.</p>
+    <p class="hanging-indent"> Murphy, G. L. (1990). Noun phrase interpretation and conceptual combination. Journal of Memory and Language, 29(3), 259–288. https://doi.org/10.1016/0749-596X(90)90001-G
+<br><br> Noun Phrase Interpretation and Conceptual Combination, written by Gregory L. Murphy, discusses how both noun-noun combinations and adjective-noun combinations are perceived in writing and whether readers find them comprehensible. In addition, the article explores which of the two combinations is more easily understood by readers and how each contributes to grasping the overall context of the message being conveyed.</p>
+    <p class="hanging-indent"> Wang, Y., Ge, T., & Ren, Z. (2022). Noun phrasal complexity in computer science conference abstracts: A corpus-based study. International Journal of Computer-Assisted Language Learning and Teaching, 12, 1–17. https://doi.org/10.4018/IJCALLT.311096
+<br><br>Noun Phrasal Complexity in Computer Science Conference Abstracts: A Corpus-Based Study, written by Yu Wang, Tianshuang Ge, and Zhilei Ren, analyzes the presence of noun phrases in computer science abstracts. The study examines the quantification of noun phrases and identifies which pre-modifiers of nouns are typically preferred by the authors of the academic journals.</p>
+    </div>
+
+  <!-- JOURNALS INVESTIGATED -->
+  <button class="references-toggle">Journals Investigated ▼</button>
+  <div class="references-content">
+    <p class="hanging-indent">Alraddadi, A. S. (2024). Reconstruction investigation model for database management systems. Journal of Computer Science, 20(1), 33–43. https://doi.org/10.3844/jcssp.2024.33.43 </p>
+<p class="hanging-indent">Alshammari, B. M. (2024). COVID-19 in the era of artificial intelligence: Existing technologies and a strategic model for mitigating future pandemics. Journal of Computer Science, 20(5), 465–486. https://doi.org/10.3844/jcssp.2024.465.486 </p>
+<p class="hanging-indent">Aslanov, T. G., Ivanov, N. Z., Anudinov, S. S., & Karlova, T. V. (2025). Algorithmization of electrostatic model for solving the direct problem of electrography. Journal of Computer Science, 21(4), 869–882. https://doi.org/10.3844/jcssp.2025.869.882 </p>
+<p class="hanging-indent">Awasthi, S., & Kohli, N. (2025). Efficient data encryption for securing HDFS using DQN-enhanced deep reinforcement learning techniques. Journal of Computer Science, 21(4), 741–760. https://doi.org/10.3844/jcssp.2025.741.760 </p>
+<p class="hanging-indent">Geasela, Y. M., Bernanda, D. Y., Andry, J. F., Jusuf, C. K., Winata, S., Lydia, & Everlin, S. (2024). Analysis of student mental health dataset using mining techniques. Journal of Computer Science, 20(1), 121–128. https://doi.org/10.3844/jcssp.2024.121.128 </p>
+<p class="hanging-indent">Ganda, Y. M., Naroua, H., & Idi, B. M. (2025). A generic syntax analyzer for the computerization of African languages. Journal of Computer Science, 21(4), 810–816. https://doi.org/10.3844/jcssp.2025.810.816 </p>
+<p class="hanging-indent">Goon, S., Pal, D., & Dihidar, S. (2022). Primary color based numerous image creation in visual cryptography with the help of grasshopper algorithm, artificial neural network and elliptic curve cryptography. Journal of Computer Science, 18(5), 322–338. https://doi.org/10.3844/jcssp.2022.322.338 </p>
+<p class="hanging-indent">Gupta, N., Gupta, B., Passi, K., & Jain, C. K. (2022). Applications of artificial intelligence based technologies in weed and pest detection. Journal of Computer Science, 18(6), 520–529. https://doi.org/10.3844/jcssp.2022.520.529 </p>
+<p class="hanging-indent">Gupta, S., Adhikari, U., Varshney, S., & Choudhury, T. (2025). Computational analysis of genre effects on movie ratings using MLP algorithms. Journal of Computer Science, 21(4), 905–917. https://doi.org/10.3844/jcssp.2025.905.917 </p>
+<p class="hanging-indent">Lopez-Zevallos, L., Navarro-Prado, E., & Cabanillas-Carbonell, M. (2025). Virtual learning system with artificial intelligence for the academic management process. Journal of Computer Science, 21(4), 827–835. https://doi.org/10.3844/jcssp.2025.827.835 </p>
+<p class="hanging-indent">Nagendra, N., & Chandra, J. (2024). Sentence classification using attention model for e-commerce product review. Journal of Computer Science, 20(5), 535–547. https://doi.org/10.3844/jcssp.2024.535.547 </p>
+<p class="hanging-indent">Nagunwa, T. (2024). Detection of phishing websites hosted in name server flux networks using machine learning. Journal of Computer Science, 20(1), 10–32. https://doi.org/10.3844/jcssp.2024.10.32 </p>
+<p class="hanging-indent">Sharif, M. I., Mehmood, M., Uddin, M. P., Siddique, K., Akhtar, Z., & Waheed, S. (2024). Federated learning for analysis of medical images: A survey. Journal of Computer Science, 20(12), 1610–1621. https://doi.org/10.3844/jcssp.2024.1610.1621 </p>
+<p class="hanging-indent">Shah, S., & Patel, S. (2025). A comprehensive survey on fake news detection using machine learning. Journal of Computer Science, 21(4), 982–990. https://doi.org/10.3844/jcssp.2025.982.990 </p>
+<p class="hanging-indent">Velmurugan, T., & Santhanam, T. (2010). Computational complexity between k-means and k-medoids clustering algorithms for normal and uniform distributions of data points. Journal of Computer Science, 6(3), 363–368. https://doi.org/10.3844/jcssp.2010.363.368</p>
+  </div>
+
+  <!-- ABSTRACT ANALYSIS -->
+  <button class="references-toggle">Appendix ▼</button>
+  <div class="references-content">
+    <a href="https://www.google.com" target="_blank">Abstract Analysis</a>
+    <iframe 
+    src="https://www.google.com" 
+    width="100%" 
+    height="500"
+    style="border-radius:12px; border:none;">
+    </iframe>
+    
+    <br><br><a href="https://www.google.com" target="_blank">Abstract Data Combined Table</a>
+     <iframe 
+    src="https://www.google.com" 
+    width="100%" 
+    height="500"
+    style="border-radius:12px; border:none;">
+    </iframe>
+</div>
+
 </div>
 
 </section>
@@ -669,19 +732,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// -------------------- REFERENCES DROPDOWN (FIXED) --------------------
-const toggleBtn = document.querySelector('.references-toggle');
-const content = document.querySelector('.references-content');
+// -------------------- REFERENCES DROPDOWN --------------------
+// -------------------- MULTIPLE DROPDOWNS --------------------
+const toggles = document.querySelectorAll('.references-toggle');
 
-if (toggleBtn && content) {
-  toggleBtn.addEventListener('click', () => {
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    
+    const content = toggle.nextElementSibling;
+
     content.classList.toggle('open');
 
-    toggleBtn.textContent = content.classList.contains('open')
-      ? "References ▲"
-      : "References ▼";
+    // Change arrow
+    if (content.classList.contains('open')) {
+      toggle.textContent = toggle.textContent.replace("▼", "▲");
+    } else {
+      toggle.textContent = toggle.textContent.replace("▲", "▼");
+    }
   });
-}
+});
 </script>
 
 </body>
