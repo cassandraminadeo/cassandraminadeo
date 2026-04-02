@@ -158,6 +158,64 @@ footer {
     height: 20px;
     margin: 0 5px;
 }
+
+/* ---------- REFERENCES DROPDOWN ---------- */
+.references-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+    
+
+    position: relative;
+    z-index: 5;
+}
+
+.references-toggle {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+    border: none;
+    padding: 15px 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.references-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.references-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: #fff;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+
+.references-content p {
+    text-align: left;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* OPEN STATE */
+.references-content.open {
+    max-height: none; /* enough space for content */
+    padding: 20px;
+}
+
+.hanging-indent {
+    padding-left: 20px;
+    text-indent: -20px;
+}
 </style>
 </head>
 
@@ -248,6 +306,37 @@ footer {
 <p>Also, professional artists have raised very serious concerns over the fairness and long-term impacts of AI on creative industries. Lovato, Zimmerman, Smith, Dodds, and Karson's survey suggests that a majority of artists feel threatened by AI, particularly where there is no transparency and due credit. This is not a matter of job security but the fear that loses the values that govern art work: ownership, intentionality, and humanity. The adoption of AI without moral standards could actually redefine how we enjoy and engage with art. If AI-generated work continues to be offered up as human-produced, it will risk undermining creators' and consumers' trust along with devaluing the skill-building years that artists invest into their work.</p>
 <p>However, this essay has also shown that AI does not have to be a negative force on the creative industries. Artificial intelligence, if used responsibly, can be a means to augment human creativity rather than replace it. As discussed in Kulishova and Daiva's paper, AI can be ethically integrated into the design process through data analysis and stylistic enhancement that still permits human decision-making. By using AI to inform design choices such as color harmony and visual composition rather than generating entire pieces independently, artists can maintain artistic integrity while still benefiting from technological innovation.</p>
 <p>The future of book publishing with AI does not have to be one of strife and opposition. Instead, it can be a future of collaboration and transparency. Publishers, developers, and designers must adopt sound ethical principles that distinguish between totally AI-generated material and AI-augmented design. Unveiling the use of AI, fairly crediting collaborating artists, and respecting the work and identity of human artists are essential steps toward making a future where AI is a respected creative collaborator, not a silent substitute. If the industry embraces these principles, artificial intelligence can supplement traditional artistry, enhancing the design process without eroding the values that give art value. Ultimately, the argument regarding AI-generated book covers reflects wider cultural concerns about the role of technology in art. It leads us to ask what we value in art, not just visually but ethically. As technology evolves, and as this technology continues to do so, it is up to artists, consumers, and academics to ensure that creativity need not come at the cost of honesty, fairness, or humanity.</p>
+
+<div class="references-container">
+
+  <!-- REFERENCES -->
+  <button class="references-toggle">References ▼</button>
+  <div class="references-content">
+    <p class="hanging-indent">Artbreeder. (n.d.). Tools. <a href="https://www.artbreeder.com/tools" target="_blank">https://www.artbreeder.com/tools</a></p>
+
+<p class="hanging-indent">Bellaiche, L., Shahi, R., Turpin, M. H., et al. (2023). Humans versus AI: Whether and why we prefer human-created compared to AI-created artwork. <i>Cognitive Research: Principles and Implications, 8</i>, 42. <a href="https://doi.org/10.1186/s41235-023-00499-6" target="_blank">https://doi.org/10.1186/s41235-023-00499-6</a></p>
+
+<p class="hanging-indent">Damonza. (n.d.). What now? The legal and ethical use of AI in book cover design. <a href="https://damonza.com/the-legal-and-ethical-use-of-ai-in-book-cover-design/" target="_blank">https://damonza.com/the-legal-and-ethical-use-of-ai-in-book-cover-design/</a></p>
+
+<p class="hanging-indent">Frederick, S. (2005). Cognitive reflection and decision making. <i>Journal of Economic Perspectives, 19</i>(4), 25–42. <a href="https://doi.org/10.1257/089533005775196732" target="_blank">https://doi.org/10.1257/089533005775196732</a></p>
+
+<p class="hanging-indent">John, D. (2023, May 16). This AI-generated book cover is causing controversy. <i>Creative Bloq</i>. <a href="https://www.creativebloq.com/news/ai-book-cover" target="_blank">https://www.creativebloq.com/news/ai-book-cover</a></p>
+
+<p class="hanging-indent">Kulishova, N., & Daiva, S. (2025). Using machine learning and generative intelligence in book cover development. <i>Journal of Imaging, 11</i>(2), 46. <a href="https://doi.org/10.3390/jimaging11020046" target="_blank">https://doi.org/10.3390/jimaging11020046</a></p>
+
+<p class="hanging-indent">Lovato, J., Zimmerman, J., Smith, I., Dodds, P., & Karson, J. (2024). Foregrounding artist opinions: A survey study on transparency, ownership, and fairness in AI generative art. <i>arXiv</i>. <a href="https://arxiv.org/abs/2401.15497" target="_blank">https://arxiv.org/abs/2401.15497</a></p>
+
+<p class="hanging-indent">Murphy, D. (2022, October 14). Using AI for art, images, and book covers with Derek Murphy. <i>The Creative Penn</i>. <a href="https://www.thecreativepenn.com/2022/10/14/ai-generative-art-midjourney-dall-e/" target="_blank">https://www.thecreativepenn.com/2022/10/14/ai-generative-art-midjourney-dall-e/</a></p>
+
+<p class="hanging-indent">Sigler, S. (2024, May 17). Is using AI art for books always wrong… or only sometimes? <i>Empty Set Entertainment</i>. <a href="https://scottsigler.com/blogs/siglerverse/ai-art-and-fiction" target="_blank">https://scottsigler.com/blogs/siglerverse/ai-art-and-fiction</a></p>
+
+<p class="hanging-indent">TLVTech. (2025, January 6). AI through time: From unknown to ubiquitous. <a href="https://www.tlvtech.io/post/ai-popularity-when" target="_blank">https://www.tlvtech.io/post/ai-popularity-when</a></p>
+
+<p class="hanging-indent">Toplak, M. E., West, R. F., & Stanovich, K. E. (2013). Assessing miserly information processing: An expansion of the Cognitive Reflection Test. <i>Thinking & Reasoning, 20</i>(2), 147–168. <a href="https://doi.org/10.1080/13546783.2013.844729" target="_blank">https://doi.org/10.1080/13546783.2013.844729</a></p>
+
+<p class="hanging-indent">Weatherbed, J. (2023, May 15). Not even NYT bestsellers are safe from AI cover art. <i>The Verge</i>. <a href="https://www.theverge.com/2023/5/15/23724102/sarah-j-maas-ai-generated-book-cover-bloomsbury-house-of-earth-and-blood" target="_blank">https://www.theverge.com/2023/5/15/23724102/sarah-j-maas-ai-generated-book-cover-bloomsbury-house-of-earth-and-blood</a></p>
+  </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -266,6 +355,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+// -------------------- MULTIPLE DROPDOWNS --------------------
+const toggles = document.querySelectorAll('.references-toggle');
+
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    
+    const content = toggle.nextElementSibling;
+
+    content.classList.toggle('open');
+
+    // Change arrow
+    if (content.classList.contains('open')) {
+      toggle.textContent = toggle.textContent.replace("▼", "▲");
+    } else {
+      toggle.textContent = toggle.textContent.replace("▲", "▼");
+    }
+  });
 });
 </script>
 
