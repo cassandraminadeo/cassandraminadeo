@@ -138,6 +138,73 @@ header::after {
     margin-bottom: 16px;
 }
 
+/* ---------- COOL TABLE ---------- */
+.content-table {
+    width: auto;
+    min-width: 700px;
+    border-collapse: collapse;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Caption */
+.content-table caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.content-table thead {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+}
+
+/* Cells */
+.content-table th,
+.content-table td {
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+/* Zebra */
+.content-table tbody tr:nth-child(even) {
+    background-color: #f8faff;
+}
+
+/* Hover row */
+.content-table tbody tr:hover {
+    background-color: #e6ecff;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Subtle header polish */
+.content-table th {
+    letter-spacing: 0.4px;
+}
+
+/* ---------- RESPONSIVE ANIMATION ---------- */
+@media (max-width: 768px) {
+    .table-wrapper {
+        opacity: 0;
+        transform: translateY(25px);
+        pointer-events: none;
+    }
+
+    .table-message {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---------- FOOTER ---------- */
 footer {
     background: #111;
@@ -285,6 +352,72 @@ footer {
 
 <p>Very similar to the findings of the study by Bellaiche et al., a clear preference was seen for the images labeled as having been created by humans, even though all of the images used in the study had been created using artificial intelligence. This again points to the idea that labeling had an impact on the perceptions of the participants about the artwork. If we look at the results as a whole, we can see that the lowest percentage of responses for the human-labeled images was 10.2%, and the highest was 10.8%, while the lowest percentage of responses for the AI-labeled images was 24.1%, and the highest was only 2.6%. Again, we can see that the participants were less likely to rate the images highly when they were told that the artwork was created using artificial intelligence and that the participants were more likely to rate the artwork highly when they were told that the artwork was created by a human.</p>
 <p>As depicted in Table 1 below, the responses to the human-labeled images show a greater degree of clustering towards the mid-to-high scale values (ratings 3 and 4), indicating that the participants had a generally positive perception of the images. The responses to the lowest rating category (1) are also less frequent, indicating that the participants had a relatively lower negative perception of the artwork when it was assumed to be created by humans.</p>
+
+<div class="table-wrapper">
+<table class="content-table">
+  <caption>Table 1: Human Labeled Image Results
+</caption>
+
+  <thead>
+    <tr>
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th>Liking</th>
+      <td>18</td>
+      <td>38</td>
+      <td>43</td>
+      <td>39</td>
+      <td>24</td>
+    </tr>
+
+    <tr>
+      <th>Beauty</th>
+      <td>15</td>
+      <td>41</td>
+      <td>45</td>
+      <td>33</td>
+      <td>28</td>
+    </tr>
+
+    <tr>
+      <th>Profundity</th>
+      <td>20</td>
+      <td>45</td>
+      <td>43</td>
+      <td>59</td>
+      <td>36</td>
+    </tr>
+
+    <tr>
+      <th>Worth</th>
+      <td>13</td>
+      <td>42</td>
+      <td>54</td>
+      <td>37</td>
+      <td>16</td>
+    </tr>
+
+    <tr>
+      <th>Percentage</th>
+      <th>10.2%</th>
+      <th>25.6%</th>
+      <th>31.0%</th>
+      <th>22.4%</th>
+      <th>10.8%</th>
+    </tr>
+
+  </tbody>
+</table>
+</div>
 
 <p>Contrary to the responses to the human-labeled images depicted in Table 1 above, the responses to the AI-labeled images depicted in Table 2 below show a greater degree of clustering towards the lower rating categories, specifically rating categories 1 and 2, and a very rare occurrence of the highest rating category (5). This suggests that the labeling of the artwork as having been created by an AI had a negative impact on the perceptions of the participants regarding the quality, depth, and value of the artwork. From the responses depicted in both tables above, it is clear that labeling artwork as having been created by humans is likely to result in a positive perception of the artwork, regardless of its true nature.</p>
 
