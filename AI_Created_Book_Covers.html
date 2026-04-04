@@ -190,6 +190,26 @@ header::after {
     letter-spacing: 0.4px;
 }
 
+/* ---------- TABLE WRAPPER ---------- */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ---------- MOBILE MESSAGE ---------- */
+.table-message {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 /* ---------- RESPONSIVE ANIMATION ---------- */
 @media (max-width: 768px) {
     .table-wrapper {
@@ -212,18 +232,6 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 60px;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.social-link img {
-    width: 20px;
-    height: 20px;
-    margin: 0 5px;
 }
 
 /* ---------- REFERENCES DROPDOWN ---------- */
@@ -283,6 +291,67 @@ footer {
     padding-left: 20px;
     text-indent: -20px;
 }
+
+
+/* ---------- Captions ---------- */
+.image-card {
+  max-width: 600px;
+  margin: 35px auto;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.image-card figcaption {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: #f8f8f8;
+  border-left: 4px solid #69696b;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.caption-title {
+  font-weight: 700;
+  color: #222;
+  margin-right: 4px;
+}
+
+.table-card {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.content-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: #f8f8f8;
+  border-left: 4px solid #69696b;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
 </style>
 </head>
 
@@ -321,24 +390,31 @@ footer {
 <p> Artificial intelligence is a booming industry that is reaching a multitude of fields. One field that AI has made a huge appearance in is publications, but not in the way most people may first think. Artificial intelligence is slowly but surely fooling a lot of users, and AI-created book covers are becoming a very interesting phenomenon that readers are beginning to notice. The first thing readers interact with when picking out a book to read is the cover that the author has created themselves or found an artist that is important to them. This research highlights how AI images can mislead and confuse users and consumers, pointing out that while AI is a powerful tool, presenting its creations as human-created is both unethical and misleading. </p>
 <p> Readers of fantasy have recently been shown an AI cover that has become incredibly controversial very quickly. Sarah J. Maas is an incredibly popular artist among the reading community, mainly known for A Court of Thorns and Roses. The UK edition of a book called A House of Earth and Blood in the Crescent City Series has recently come under fire for its AI cover republish of the popular book originally released in March of 2020. On Twitter (now referred to as X) there has been an extreme amount of discourse of how unethical this cover is to artists and the book's viewers (John, 2023).</p>
 
-<br>
-<figure>
-<figcaption>Figure One: Sarah J. Maas’ AI Book Cover</figcaption>
-<img src="images/sjmbc.png" alt="Image One" title = "Figure One: Sarah J. Maas’ AI Book Cover" style="display: block; margin: 0 auto;" width="500" >
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure One.</span>
+    AI-generated book cover for Sarah J. Maas’ novel that sparked controversy among readers and artists.
+  </figcaption>
+
+  <img src="images/sjmbc.png" alt="AI-generated book cover">
 </figure>
 
-<br>
 
-<figure>
-<figcaption>Figure Two: X Post on Mass’ AI Book Cover</figcaption>
-<img src="images/twittercomm.png" alt="Image Two" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Two.</span>
+    Public reaction on X (formerly Twitter) criticizing the use of AI in book cover design.
+  </figcaption>
+  <img src="images/twittercomm.png" alt="Twitter discussion on AI book cover">
 </figure>
 
-<br>
 
-<figure>
-<figcaption>Figure Three: X Post on NYT Best Sellers: AI Book Covers</figcaption>
-<img src="images/twittercomm2.png" alt="Image Three" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Three.</span>
+    Social media discourse highlighting concerns about AI-generated covers in major publications.
+  </figcaption>
+  <img src="images/twittercomm2.png" alt="Twitter discussion on AI book covers">
 </figure>
 
 <p> This fiasco prompted a broader conversation about the unethical foundations of AI-generated content, particularly in media and publishing, where authenticity, authorial ownership, and transparency are essential values being progressively eroded by emerging technologies. While AI-generated book covers are rapidly growing more popular in the publishing industry, they have drawn equal-level indignation from both public readers and professional artists, revealing deep ethical concerns; however, by working with open design practices and ethical algorithmic best practices, AI can be used in creative fields without suppressing human creativity.</p>
@@ -355,9 +431,12 @@ footer {
 
 <br>
 
-<figure>
-<figcaption>Figure Four: Bellaiche, Shahi, & Turpin, 2023 Study Results</figcaption>
-<img src="images/SR.png" alt="Image Four" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Four.</span>
+    Results from Bellaiche, Shahi, and Turpin (2023) demonstrating preference bias toward human-labeled artwork.
+  </figcaption>
+  <img src="images/SR.png" alt="Study results chart">
 </figure>
 
 <p> Bellaiche, Shahi, and Turpin's research suggests a strong human preference bias toward human-created versus AI-created works. From the two studies that they conducted, they demonstrate not only that people reject AI-made art but also that they also regard human-made art as more meaningful, richer in emotional content, and more labor-intensive. These findings have crucial visual-dependent industry ramifications, such as in publishing, where book covers represent the first exposure a reader experiences. If AI-designed covers are to be used, then there has to be transparency so that the trust continues with the readers. However, given the preference for human-created art, authors, artists, and developers should carefully consider the potential drawbacks of AI-generated covers. While AI can serve as a helpful tool in the creative process, the enduring value of human creativity remains a key factor in how art is received and appreciated.</p>
@@ -368,9 +447,12 @@ footer {
 
 <br>
 
-<figure>
-<figcaption>Figure Five: Lovato, Zimmerman, Smith, Dodds, & Karson, 2024 Survey Questions and Results</figcaption>
-<img src="images/SQAR.png" alt="Image Five" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Five.</span>
+    Survey responses from artists regarding transparency, ownership, and fairness in AI-generated art.
+  </figcaption>
+  <img src="images/SQAR.png" alt="Artist survey results">
 </figure>
 
 <p>Lovato's, Zimmerman's, Smith's, Dodds's, and Karson's research provides an insightful view of what artists perceive about the rapid expansion of generative artificial intelligence in the art market. Through their extensive survey, they offer the fears and the ethical dilemmas, as well as the advantages of AI art. The findings underscore the tension between AI as a creative tool and the threat it poses to traditional artistic professions, particularly in terms of ownership, transparency, and fairness. If artists believe that transparency regarding AI-generated book covers should be standard, then publishers and designers should ensure clear labeling to inform consumers about the origins of the artwork. By capturing a wide range of artist opinions, this study sheds light on the ongoing debate about AI’s role in art, revealing both skepticism and cautious optimism. With further development of AI, this result forms a worthwhile foundation for policy, ethics, and creative industries' future debates in a world that is becoming increasingly AI-embedded.</p>
@@ -387,18 +469,24 @@ footer {
 
 <br>
 
-<figure>
-<figcaption>Figure Six: Study Replication Image Examples</figcaption>
-<img src="images/SRE.png" alt="Image Six" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Six.</span>
+    Example images used in the replication study comparing AI-labeled and human-labeled artwork.
+  </figcaption>
+  <img src="images/SRE.png" alt="Study replication images">
 </figure>
 
 <p>Very similar to the findings of the study by Bellaiche et al., a clear preference was seen for the images labeled as having been created by humans, even though all of the images used in the study had been created using artificial intelligence. This again points to the idea that labeling had an impact on the perceptions of the participants about the artwork. If we look at the results as a whole, we can see that the lowest percentage of responses for the human-labeled images was 10.2%, and the highest was 10.8%, while the lowest percentage of responses for the AI-labeled images was 24.1%, and the highest was only 2.6%. Again, we can see that the participants were less likely to rate the images highly when they were told that the artwork was created using artificial intelligence and that the participants were more likely to rate the artwork highly when they were told that the artwork was created by a human.</p>
 <p>As depicted in Table 1 below, the responses to the human-labeled images show a greater degree of clustering towards the mid-to-high scale values (ratings 3 and 4), indicating that the participants had a generally positive perception of the images. The responses to the lowest rating category (1) are also less frequent, indicating that the participants had a relatively lower negative perception of the artwork when it was assumed to be created by humans.</p>
 
+
 <div class="table-wrapper">
-<table class="content-table">
-  <caption>Table 1: Human Labeled Image Results
-</caption>
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 1.</span>
+      Human Labeled Image Results
+    </caption>
 
   <thead>
     <tr>
@@ -461,12 +549,19 @@ footer {
 </table>
 </div>
 
+<p class="table-message">
+  ⚠️ This table is best viewed on a larger screen. Please expand your window or view on desktop.
+</p>
+
 <p>Contrary to the responses to the human-labeled images depicted in Table 1 above, the responses to the AI-labeled images depicted in Table 2 below show a greater degree of clustering towards the lower rating categories, specifically rating categories 1 and 2, and a very rare occurrence of the highest rating category (5). This suggests that the labeling of the artwork as having been created by an AI had a negative impact on the perceptions of the participants regarding the quality, depth, and value of the artwork. From the responses depicted in both tables above, it is clear that labeling artwork as having been created by humans is likely to result in a positive perception of the artwork, regardless of its true nature.</p>
 
-<div class="table-wrapper">
-<table class="content-table">
-  <caption>Table 2: Artificial Intelligence Labeled Image Results
-</caption>
+
+    <div class="table-wrapper">
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 2.</span>
+      Artificial Intelligence Labeled Image Results
+    </caption>
 
   <thead>
     <tr>
@@ -529,6 +624,10 @@ footer {
 </table>
 </div>
 
+<p class="table-message">
+  ⚠️ This table is best viewed on a larger screen. Please expand your window or view on desktop.
+</p>
+
 <h3> Using AI Ethically</h3>
 <p>There are ethical ways to use artificial intelligence on the business side of creating book covers. Book covers are the first thing a reader sees, and the goal is to get them to buy the book. Authors want a captivating cover, and there are ways to achieve this without fully using AI to create a cover from scratch. "Using Machine Learning and Generative Intelligence in Book Cover Development," written by Nonna Kulishova and Sajek Daiva, is a research paper that discusses the impact that book covers have on the audience, including aspects such as color palettes and the layout of the cover. Their paper considers how Generative Artificial Intelligence (GAI) can enhance book cover appearances by optimizing the design to appeal to the audience. </p>
 <p> The authors discuss three key methodologies when planning their research:</p>
@@ -540,16 +639,21 @@ footer {
 
 <br>
 
-<figure>
-<figcaption>Figure Seven: Kulishova & Daiva, 2025: Color Cluster in Book Covers</figcaption>
-<img src="images/colorcluster.png" alt="Image Seven" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Seven.</span>
+    Visualization of color clustering patterns identified in popular book covers using generative AI.
+  </figcaption>
+  <img src="images/colorcluster.png" alt="Color clustering analysis">
 </figure>
 
-<br>
 
-<figure>
-<figcaption>Figure Eight: Kulishova & Daiva, 2025: Color Cluster in Book Covers</figcaption>
-<img src="images/colorclusterbook.png" alt="Image Eight" style="display: block; margin: 0 auto;" width="500">
+<figure class="image-card">
+  <figcaption>
+    <span class="caption-title">Figure Eight.</span>
+    Application of color clustering to book cover design for improved visual appeal and genre alignment.
+  </figcaption>
+  <img src="images/colorclusterbook.png" alt="Book cover color clustering">
 </figure>
 
 <p>Kulishova and Daiva stress the importance of book covers as the first thing audiences see, leaving a lasting impression on whether they decide to pick up the book to read. It is also important to note that, according to their research, different genres tend to have a typical color associated with them. They use GAI to establish what those typical color schemes are, allowing it to influence the designer's opinion of the book covers they are developing. For example, they run GAI on romance books from the years 2011–2023 and find that, although there is a wide array of associated colors, the color green is highly underrepresented. This allows the designer to select the most popular color that would attract the most attention.</p>
