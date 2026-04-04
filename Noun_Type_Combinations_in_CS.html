@@ -350,6 +350,12 @@ footer {
   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
+.content-table caption .caption-title {
+  font-weight: 700;
+  color: #222;
+  margin-right: 4px;
+}
+
 
 </style>
 </head>
@@ -449,7 +455,9 @@ footer {
 
 <div class="table-wrapper">
 <table class="content-table">
-  <caption>Table 2: Total Verb-Noun Combination Count among Categories
+ <caption>
+  <span class="caption-title">Table 2.</span>
+  Total verb-noun combination count among categories
 </caption>
 
   <thead>
@@ -493,18 +501,49 @@ footer {
 </p>
 <br> <p> Although noun–noun phrases are typically more prevalent in discipline-specific writing, Abstract Six presents a notable exception: it contains only two noun–noun combinations compared to eight adjective–noun combinations. This deviation is particularly noteworthy because, while uncommon, such variations do occur and highlight the stylistic flexibility that can exist within academic writing. There is also an exception when it comes to Abstract One’s discipline-specific verb-noun combinations. This is the only abstract where the discipline-specific combinations outweigh the non-discipline-specific verb-noun combinations. Recognizing these outliers is important, as they can offer insight into the author's rhetorical choices and the emphasis placed on descriptive precision. Refer to Table 3 and Table 4 to show the representation of a full breakdown of all of the combinations in each abstract. Refer to Table 5 and Table 6 to see a broad overview of the analysis.</p>
 
-<h3>Table 3: Abstract Specific Noun-Noun and Adjective-Noun Combination Analysis
-</h3>
-<canvas id="combinationsChart" style="max-width:100%; height:500px;"></canvas>
+<div class="table-card">
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 3.</span>
+      Abstract-specific noun-noun and adjective-noun combination analysis
+    </caption>
+  </table>
 
-<h3>Table 4: Broad Overview of Noun-Noun and Adjective-Noun Combinations Analysis</h3>
-<canvas id="summaryBarChart"></canvas>
+  <canvas id="combinationsChart" style="max-width:100%; height:500px;"></canvas>
+</div>
 
-<h3>Table 5: Abstract Specific Verb-Noun Combination Analysis</h3>
-<canvas id="verbAdjChart"></canvas>
+<div class="table-card">
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 4.</span>
+      Broad overview of noun-noun and adjective-noun combinations analysis
+    </caption>
+  </table>
 
-<h3>Tablke 6: Broad Overview of Verb-Noun Combinations Analysis</h3>
+  <canvas id="summaryBarChart"></canvas>
+</div>
+
+<div class="table-card">
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 5.</span>
+      Abstract-specific verb-noun combination analysis
+    </caption>
+  </table>
+
+  <canvas id="verbAdjChart"></canvas>
+</div>
+
+<div class="table-card">
+  <table class="content-table">
+    <caption>
+      <span class="caption-title">Table 6.</span>
+      Broad overview of verb-noun combinations analysis
+    </caption>
+  </table>
+
   <canvas id="verbBarChart"></canvas>
+</div>
 
 <br> <p> These results suggest an incipient pattern of lexical use in academic writing in the discipline. Noun-noun combinations appear to have a more precise, field-specific communicative function, while adjective-noun combinations allow for greater descriptive latitude. Furthermore, the use of the verb-noun combinations can be seen to interact with the use of the noun-noun or adjective-noun combinations, as the noun phrase that follows the verb often appears to contain technical compounds. Identification of the pattern and application of these lexical pairs can inform subsequent knowledge of the conventions of academic writing and assist in guiding future work in genre-sensitive language instruction or corpus-based inquiry. Further research on a larger data set will be required to confirm whether these trends are accurate across a broader spectrum of texts.</p>
 <h3> Discussion</h3>
@@ -788,20 +827,31 @@ new Chart(ctxBar, {
   type: 'bar',
   data: {
     labels: [
-      "Discipline Specific Noun-Noun",
-      "Non-Discipline Noun-Noun",
-      "Discipline Adjective-Noun",
-      "Non-Discipline Adjective-Noun",
-      "Discipline Both",
-      "Non-Discipline Both"
+      "DS NN",
+      "Non-DS NN",
+      "DS Adj-N",
+      "Non-DS Adj-N",
+      "DS Both",
+      "Non-DS Both"
     ],
     datasets: [{
       data: [104, 68, 39, 159, 37, 16],
       backgroundColor: ['#667eea','#764ba2','#ff6b6b','#fbc531','#00b894','#0984e3']
     }]
+  }, 
+
+options: {
+  plugins: {
+    legend: {
+      display: false
+    }
   }
+}
+
 });
 }
+
+
 
 // -------------------- BAR CHART 2 --------------------
 const ctxVerb = document.getElementById('verbBarChart')?.getContext('2d');
@@ -820,7 +870,16 @@ new Chart(ctxVerb, {
       data: [49, 31, 14, 71, 110],
       backgroundColor: ['#667eea','#764ba2','#ff6b6b','#fbc531','#00b894']
     }]
+  },
+
+options: {
+  plugins: {
+    legend: {
+      display: false
+    }
   }
+}
+
 });
 }
 
