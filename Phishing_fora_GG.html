@@ -58,6 +58,78 @@ body {
     transform: translateY(-2px);
 }
 
+/* ---------- COOL TABLE ---------- */
+.content-table {
+    width: auto;
+    min-width: 700px;
+    border-collapse: collapse;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Caption */
+.content-table caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.content-table thead {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+}
+
+/* Cells */
+.content-table th,
+.content-table td {
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+/* Zebra */
+.content-table tbody tr:nth-child(even) {
+    background-color: #f8faff;
+}
+
+/* Hover row */
+.content-table tbody tr:hover {
+    background-color: #e6ecff;
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Subtle header polish */
+.content-table th {
+    letter-spacing: 0.4px;
+}
+
+/* ---------- TABLE WRAPPER ---------- */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ---------- MOBILE MESSAGE ---------- */
+.table-message {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 /* ---------- DROPDOWN ---------- */
 .dropdown-menu {
     position: absolute;
@@ -138,6 +210,21 @@ header::after {
     margin-bottom: 16px;
 }
 
+/* ---------- RESPONSIVE ANIMATION ---------- */
+@media (max-width: 768px) {
+    .table-wrapper {
+        opacity: 0;
+        transform: translateY(25px);
+        pointer-events: none;
+    }
+
+    .table-message {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---------- FOOTER ---------- */
 footer {
     background: #111;
@@ -158,6 +245,124 @@ footer {
     height: 20px;
     margin: 0 5px;
 }
+
+/* ---------- REFERENCES DROPDOWN ---------- */
+.references-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+    
+
+    position: relative;
+    z-index: 5;
+}
+
+.references-toggle {
+    background: linear-gradient(135deg, #69696b, #272728);
+    color: white;
+    border: none;
+    padding: 15px 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.references-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.references-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: #fff;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+
+.references-content p {
+    text-align: left;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* OPEN STATE */
+.references-content.open {
+    max-height: none; /* enough space for content */
+    padding: 20px;
+}
+
+.hanging-indent {
+    padding-left: 20px;
+    text-indent: -20px;
+}
+
+/* ---------- Captions ---------- */
+.image-card {
+  max-width: 600px;
+  margin: 35px auto;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.image-card figcaption {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: #f8f8f8;
+  border-left: 4px solid #69696b;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.caption-title {
+  font-weight: 700;
+  color: #222;
+  margin-right: 4px;
+}
+
+.table-card {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.content-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: #f8f8f8;
+  border-left: 4px solid #69696b;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
 </style>
 </head>
 
@@ -192,7 +397,111 @@ footer {
 <!-- PHISHING CONTENT -->
 <section class="noun-adj-section">
 <h2>Phishing for a Good Game</h2>
-<p>Yada yada</p>
+<h3> Introduction</h3>
+<p>Digital natives are increasingly engaged with online spaces, and this level of integration with technology is having a profound impact on how students interact with new information. According to Kehley Coviello, digital natives are “...individuals born during or after the information age, particularly those from the late twentieth century to the twenty-first century. These individuals have grown up surrounded by digital technology, such as the Internet, cell phones, and computers, making them inherently familiar with these tools from a young age. (Covielo, 2025)” Society as a whole is also becoming more focused on technology, which means that students need to be able to use more complicated digital systems in both school and work. It is crucial to understand this shift, as interactivity is no longer a secondary aspect of learning—it is increasingly becoming the central aspect of how complex information is communicated and understood. To prepare students for this shift means recognizing that engagement, usability, and experiential learning are essential elements of effective education.</p>
+<p>This paper draws on existing research in digital education, interactive elements, and cognitive engagement to examine the potential for video games to serve as educational tools. Specifically, a game was created to determine if interactive play can improve understanding of jargon-rich government documents, which are often complex and difficult for the reader to navigate. By taking static, text-based information and making it interactive, the study aims to determine if the game can decrease cognitive overload and increase meaningful engagement with technical information.</p>
+<p>Using Phishing for a Good Game as a UX study, this paper analyzes how video games as a medium can enhance comprehension, engagement, and retention when teaching complex topics. Through interactive design, experiential learning strategies, and elements of gamification, the project demonstrates how technical information can become more accessible without sacrificing accuracy. Ultimately, this research argues that video games are not merely entertainment tools but viable instructional platforms capable of supporting more profound understanding of complex, jargon-based materials.</p>
+
+<h3>Learning through Video Games</h3>
+<p> Digital pedagogy is a way for students to interact and experience a different way of learning. Educating and trying to preserve information in a classroom setting can be extremely difficult for teachers, and trying to discover different ways to help students learn, especially through videogames, allows students to further their engagement and learning experience (Horssen, 2023). Reading a long and complex document that demands attention from the reader can be difficult for students, but based on goal-setting theory, achievement within a game environment can allow for a level of positive cognitive motivation to complete and understand that material (Ke et al., 2015).</p>
+<p>That being said, digital pedagogy does not replace traditional teaching methods with technology; it fundamentally shifts the way in which students engage with the material. A game-based approach to teaching and learning incorporates challenges, goals, and feedback loops that are similar to effective teaching methods. Instead of simply presenting information to the learner, digital pedagogy enables the learner to be an active participant in the process. They must make decisions, implement strategies, and reflect on the outcomes. This type of engagement enables the learner to process the information at a cognitive level. This incremental approach reflects the concept of motivation within goal-based theory. A clear sense of goals and progress has been identified as a means to increase learner engagement and effectiveness (Ke et al., 2015). Learners will be more likely to engage with the material, even when it is difficult, as they will be able to see their progress. A traditional approach to teaching and learning, such as reading, does not provide this type of feedback.</p>
+<p>Ultimately, the implementation of game-based strategies in digital pedagogy presents a solution to the problem of student engagement in contemporary educational environments. This is particularly true in light of the fact that students are increasingly becoming accustomed to digital environments outside of the classroom.</p>
+
+<h3>The Transition to Interactive Learning</h3>
+<p>The Department of Defense is currently transitioning from traditional paper technical manuals to Interactive Electronic Technical Manuals (IETMs) to create a more efficient and user-centered environment for military personnel. While paper manuals have long been the standard, they often require users to sift through hundreds of pages to locate critical information. In contrast, IETMs offer streamlined navigation and integrate multiple subject areas into a single, searchable platform, making them especially useful for personnel operating in the field (Anamika, 2023). </p>
+<p> The following image is an example of an IETM display that shows how users are able to interact with a display. The image is static, but when in use, the user is able to click on different parts and locations of the screen, and that screen will rotate and adjust based on that interactivity. </p>
+
+<p>IETMs also support improved learning outcomes. According to NAVSEA, electronic technical manuals result in “increases in user performance resulting from electronic presentation of technical information, particularly in areas where it is most needed, such as the troubleshooting of complex systems.” This demonstrates that interactive, electronic formats are especially beneficial when working with complex software and hardware, where efficient access to information directly impacts performance.</p>
+
+<h3> Phishing for a Good Game</h3>
+<p>The game created is based on the federal document “Phishing Guidance—Stop the Attack Cycle at Phase One," which outlines strategies for preventing phishing attacks. Although the document contains important cybersecurity guidance, it relies heavily on jargon and technical language that may be difficult for younger audiences to fully understand. The target audience is digital natives—individuals who are highly active online but may not fully recognize the risks of phishing or understand how these attacks operate. The game was created in the software FlowLab, where developers were able to create a storytelling-based game that prompted the user to catch safe fish in order to learn about safe phishing practices. Throughout the game there are traps intended to trick the player, and they are then forced to start over. </p>
+
+<p>There are three levels that all provide information on phishing and how to avoid attacks that are fully based off of the federal document “Phishing Guidance—Stop the Attack Cycle at Phase One,” written by the Cybersecurity and Infrastructure Security Agency. </p>
+
+<h4>Research Design</h4>
+<p>To validate the accessibility and learning efficiency of the game, a small-scale experimental study was conducted using a controlled comparison method. Sixteen volunteers, ages 25 through 30, were randomly selected through convenience sampling and then equally divided between two groups, each consisting of eight members. This random selection reduced any bias and ensured that any variations in results were due to the method and not pre-existing knowledge and experience.</p>
+<p>One group was given instructions to read and learn from the traditional written form of the federal document, whereas members of the other group were instructed to learn from the game-based version of the document. This way, it was ensured that both groups were exposed to the same information, and variations, if any, were due to presentation style, traditional written form, and game-based form. The volunteers were given a two-week period to complete the assignment, which gave them sufficient time to learn from the document. The participants were then given an exam through Google Forms to complete once they finished going through the material. </p>
+<p>To ensure the integrity of the exam, participants were instructed not to reference the source material during the exam. Once participants completed their designated format, both groups were given the same multiple-choice exam to assess their comprehension, retention, and understanding of the key concepts presented in the material. Since the exam was the same for both groups, it can be used to compare the results and determine which method provided the best results. Refer to Table 1 for the exam questions and answers. Please note that for the purpose of understanding, within the table, the correct answer is always Option 1, but within the actual exam, the correct answer was randomized. Please refer to Appendix A to analyze the quiz within Google Forms. </p>
+
+<p>The data was analyzed by comparing the average scores of each group. This method of analysis helped in understanding the impact of interactive game-based learning on accessibility and retention of knowledge as compared to traditional document-based learning. Although the sample size was small, the systematic approach enabled the making of preliminary observations regarding the effectiveness of digital learning in disseminating complex federal information.</p>
+
+<h4> Research Reflection</h4>
+<p>The data revealed that the overall performance of both groups was almost the same. The readers and the gamers performed equally well on the multiple choice test, indicating that there was no significant difference in the comprehension level of both formats.</p>
+<p>Interestingly, both groups missed the same two questions, although they selected different incorrect answers. For the question, “What are example techniques of phishing?” the participant from the reading group selected the answer describing the use of smartphones or tablets with SMS or messaging platforms such as Slack, Teams, Signal, WhatsApp, or Facebook Messenger to lure users into revealing login credentials. In contrast, the participant from the gaming group selected the answer describing impersonating supervisors, trusted colleagues, or IT personnel to send targeted emails that deceive employees into providing login credentials. While both responses relate to phishing tactics, neither matched the correct answer provided in the assessment.</p>
+<p>A similar pattern appeared with the question, “What verifies the sending server of received emails by checking published rules?” The reader selected “Secure Email Routing Technology (SERT),” while the gamer selected “Digital Message Storage Protocol (DMSP).” Both responses were incorrect, but again, the groups demonstrated comparable misunderstandings rather than fundamentally different gaps in knowledge.</p>
+<p>The following table illustrates the comparison of the results of the examinations for both groups of participants. The overall performance was similar in consistency, as most of the questions reflected a 100% correct response rate for all participants. However, there were two questions of note, as both groups reflected lower performance in answering the questions. In both of these questions, the accuracy rate was 87.50%, as there was one participant in both groups who answered the question incorrectly.</p>
+
+<p>Taken together, these findings suggest that the patterns of comprehension were similar for both instructional formats. The similarities in missed questions suggest that the presentation format, whether traditional document or game format, did not have a significant effect on which concepts of comprehension the participants struggled with.</p>
+
+<h3>Conclusion</h3>
+<p> This study was conducted in an attempt to measure whether an interactive game could make complex, jargon-heavy federal cybersecurity guidance more accessible than a written document. While the study itself failed to demonstrate a marked difference in terms of performance between the two groups, it was able to demonstrate that game-based learning could function at the same levels as conventional learning. This is because both groups ended up with nearly the same score, and both struggled equally with two questions. This suggests that an interactive version of static federal guidance materials does not necessarily sacrifice learning outcomes in favor of accessibility. As technology continues to advance, interactive learning will grow in popularity. Digital natives are already familiar with this approach, which positions them for success in future careers and learning opportunities.</p>
+<p> More specifically, Phishing for a Good Game points to the increasing value of interactive design in both education and technical communication. As digital natives continue to engage with information in dynamic ways, the methods used in instruction must also change to keep pace with these individuals. Although this study only had a limited number of participants, the results do seem to reinforce the notion that video games can be an effective tool in instruction, especially in complex topics like cybersecurity. The end result of this research does reinforce the notion that interactive learning environments can be an effective tool in conjunction with more static methods of instruction in terms of how individuals can engage with critical information.</p>
+
+
+  <!-- REFERENCES -->
+  <button class="references-toggle">References ▼</button>
+  <div class="references-content">
+    <p class="hanging-indent">
+Alshammari, S. H. (2015). The effectiveness of video games in enhancing students’ learning. <i>Research Journal of Applied Sciences, 10</i>(8), 311–316. 
+<a href="https://doi.org/10.3923/rjasci.2015.311.316" target="_blank">https://doi.org/10.3923/rjasci.2015.311.316</a>
+</p>
+
+<p class="hanging-indent">
+Anamika. (2023, May 10). Guides to interactive technical manuals: IETM documentation. <i>Medium</i>. 
+<a href="https://medium.com/@yashwanthcnp/guides-to-interactive-technical-manuals-ietm-documentation-5fe75784ed11" target="_blank">https://medium.com/@yashwanthcnp/guides-to-interactive-technical-manuals-ietm-documentation-5fe75784ed11</a>
+</p>
+
+<p class="hanging-indent">
+Coviello, K. (2025). Digital native. <i>EBSCO Information Services</i>. 
+<a href="https://www.ebsco.com/research-starters/social-sciences-and-humanities/digital-native" target="_blank">https://www.ebsco.com/research-starters/social-sciences-and-humanities/digital-native</a>
+</p>
+
+<p class="hanging-indent">
+Cybersecurity and Infrastructure Security Agency, National Security Agency, Federal Bureau of Investigation, & Multi-State Information Sharing and Analysis Center. (2023). <i>Phishing guidance: Stopping the attack cycle at phase one</i> (Cybersecurity information sheet). U.S. Department of Defense. 
+<a href="https://media.defense.gov/2023/Oct/18/2003322402/-1/-1/0/CSI-PHISHING-GUIDANCE.PDF" target="_blank">https://media.defense.gov/2023/Oct/18/2003322402/-1/-1/0/CSI-PHISHING-GUIDANCE.PDF</a>
+</p>
+
+<p class="hanging-indent">
+E-learning software. (2025, November 4). What is interactive electronic technical manual (IETM) and how does it work? <i>Medium</i>. 
+<a href="https://medium.com/@e-learningsoftware/what-is-interactive-electronic-technical-manual-ietm-and-how-does-it-work-a44e4e00932a" target="_blank">https://medium.com/@e-learningsoftware/what-is-interactive-electronic-technical-manual-ietm-and-how-does-it-work-a44e4e00932a</a>
+</p>
+
+<p class="hanging-indent">
+Horssen, J. (2023). From pixels to pedagogy: Using video games for higher education in the humanities. <i>Journal of Learning Development in Higher Education</i>. Advance online publication. 
+<a href="https://journal.aldinhe.ac.uk/index.php/jldhe/article/view/875/773" target="_blank">https://journal.aldinhe.ac.uk/index.php/jldhe/article/view/875/773</a>
+</p>
+
+<p class="hanging-indent">
+Jorgensen, E. L., & Fuller, J. J. (1998). <i>The interactive electronic technical manual</i> (Technical Report No. SOLE-8-98). Naval Surface Warfare Center, Carderock Division. 
+<a href="https://www.navsea.navy.mil/Portals/103/Documents/NSWC_Carderock/sole.pdf" target="_blank">https://www.navsea.navy.mil/Portals/103/Documents/NSWC_Carderock/sole.pdf</a>
+</p>
+
+<p class="hanging-indent">
+Ke, F., Xie, K., & Xie, Y. (2015). Game-based learning engagement: A theory- and data-driven exploration. <i>British Journal of Educational Technology, 47</i>(6), 114–134. 
+<a href="https://doi.org/10.1111/bjet.12314" target="_blank">https://doi.org/10.1111/bjet.12314</a>
+</p>
+
+<p class="hanging-indent">
+Zhang, R.-Y., Chopin, A., Shibata, K., Lu, Z.-L., Jaeggi, S. M., Buschkuehl, M., Green, C. J., & Bavelier, D. (2021). Action video game play facilitates “learning to learn.” <i>Communications Biology, 4</i>, Article 1154. 
+<a href="https://doi.org/10.1038/s42003-021-02652-7" target="_blank">https://doi.org/10.1038/s42003-021-02652-7</a>
+</p>
+  </div>
+
+   <!-- Appendix -->
+  <button class="references-toggle">Appendix ▼</button>
+  <div class="references-content">
+    <h3>Appendix A</h3>
+    <p>GoogleForm Survey</p>
+
+    <iframe 
+    src="https://forms.gle/RWUEYjjEzuehRTFs6" 
+  width="100%" 
+  height="600"
+  style="border:none; border-radius:12px;"
+  loading="lazy"
+  tabindex="-1">
+</iframe>
+
 </section>
 
 <!-- FOOTER -->
@@ -201,6 +510,8 @@ footer {
 <div class="social-media">
 </div>
 </footer>
+
+
 
 <!-- Smooth scrolling -->
 <script>
@@ -212,6 +523,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// -------------------- MULTIPLE DROPDOWNS --------------------
+const toggles = document.querySelectorAll('.references-toggle');
+
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    
+    const content = toggle.nextElementSibling;
+
+    content.classList.toggle('open');
+
+    // Change arrow
+    if (content.classList.contains('open')) {
+      toggle.textContent = toggle.textContent.replace("▼", "▲");
+    } else {
+      toggle.textContent = toggle.textContent.replace("▲", "▼");
+    }
+  });
+});
+
 </script>
 
 </body>
